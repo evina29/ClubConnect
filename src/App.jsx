@@ -19,11 +19,13 @@ import Voting from './pages/Voting';
 import Attendance from './pages/Attendance';
 import Settings from './pages/Settings';
 import Landing from './pages/Landing';
+import Onboarding from './pages/Onboarding';
 import Gamification from './pages/Gamification';
 import Analytics from './pages/Analytics';
 import SocialFeed from './pages/SocialFeed';
 import Portfolio from './pages/Portfolio';
 import QRAttendance from './pages/QRAttendance';
+import Cover from './pages/Cover';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { LanguageProvider } from './context/LanguageContext';
 import './App.css';
@@ -50,7 +52,7 @@ function App() {
 
       // Only register service worker in production
       if (import.meta.env && import.meta.env.PROD) {
-        navigator.serviceWorker.register('/sw.js')
+        navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`)
           .then(registration => console.log('SW registered:', registration))
           .catch(error => console.log('SW registration failed:', error));
       }
@@ -62,7 +64,9 @@ function App() {
       <LanguageProvider>
         <Router>
           <Routes>
-            <Route path="/" element={<Landing />} />
+            <Route path="/" element={<Cover />} />
+            <Route path="/onboarding" element={<Onboarding />} />
+            <Route path="/landing" element={<Landing />} />
             <Route path="/app/login" element={<Login />} />
             <Route path="/app/register" element={<Register />} />
             

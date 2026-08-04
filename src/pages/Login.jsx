@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import './Login.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -41,96 +42,50 @@ const Login = () => {
   };
 
   return (
-    <div style={{ 
-      minHeight: '100vh',
-      background: 'linear-gradient(135deg, #FFF8F0 0%, #FEFDFB 50%, #F9F9F9 100%)',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '20px'
-    }}>
-      <div style={{
-        maxWidth: '400px',
-        width: '100%',
-        background: 'rgba(255, 255, 255, 0.95)',
-        backdropFilter: 'blur(10px)',
-        borderRadius: '16px',
-        padding: '40px',
-        border: '1px solid rgba(126, 217, 87, 0.1)',
-        boxShadow: '0 8px 32px rgba(126, 217, 87, 0.12)'
-      }}>
-        <h1 style={{ color: '#333', marginBottom: '8px', textAlign: 'center' }}>Welcome Back</h1>
-        <p style={{ color: '#666', fontSize: '14px', marginBottom: '32px', textAlign: 'center' }}>
-          Sign in to continue to ClubConnect
-        </p>
-        <form onSubmit={handleLogin}>
+    <div className="login-bg">
+      <div className="login-glass">
+        <div className="login-title">Welcome Back</div>
+        <div className="login-desc">Sign in to continue to ClubConnect</div>
+        <form className="login-form" onSubmit={handleLogin}>
           <input
             type="email"
+            className="login-input"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            style={{ 
-              display: 'block', 
-              margin: '0 auto 16px', 
-              padding: '12px 16px', 
-              width: '100%',
-              border: '1.5px solid #E5E5E5',
-              borderRadius: '8px',
-              fontSize: '14px'
-            }}
           />
           <input
             type="password"
+            className="login-input"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            style={{ 
-              display: 'block', 
-              margin: '0 auto 8px', 
-              padding: '12px 16px', 
-              width: '100%',
-              border: '1.5px solid #E5E5E5',
-              borderRadius: '8px',
-              fontSize: '14px'
-            }}
           />
-          <div style={{ textAlign: 'right', marginBottom: '20px' }}>
+          <div style={{ textAlign: 'right', marginBottom: '18px' }}>
             <a 
               href="#" 
+              className="login-link"
               onClick={(e) => { e.preventDefault(); setShowResetModal(true); }}
-              style={{ color: '#7ED957', fontSize: '13px', textDecoration: 'none', fontWeight: '500' }}
             >
               Forgot password?
             </a>
           </div>
-          {error && <p style={{ color: '#DC2626', fontSize: '14px', marginBottom: '16px', textAlign: 'center' }}>{error}</p>}
+          {error && <div className="login-error">{error}</div>}
           <button 
             type="submit" 
+            className="login-btn"
             disabled={loading}
             aria-label="Sign in to your account"
-            style={{ 
-              padding: '14px', 
-              width: '100%',
-              background: loading ? '#ccc' : 'linear-gradient(135deg, #7ED957, #6EB5FF)',
-              color: 'white',
-              border: 'none',
-              borderRadius: '8px',
-              fontSize: '16px',
-              fontWeight: '600',
-              cursor: loading ? 'not-allowed' : 'pointer',
-              marginBottom: '16px',
-              transition: 'all 0.2s'
-            }}
           >
             {loading ? 'Signing in...' : 'Sign In'}
           </button>
         </form>
-        <p style={{ textAlign: 'center', color: '#666', fontSize: '14px' }}>
+        <div style={{ textAlign: 'center', color: '#b6e6c9', fontSize: '1rem' }}>
           Don't have an account?{' '}
-          <Link to="/app/register" style={{ color: '#7ED957', textDecoration: 'none', fontWeight: '500' }}>Sign up</Link>
-        </p>
+          <Link to="/app/register" className="login-link">Sign up</Link>
+        </div>
       </div>
 
       {/* Password Reset Modal */}
@@ -148,15 +103,16 @@ const Login = () => {
           zIndex: 1000
         }} onClick={() => setShowResetModal(false)}>
           <div style={{
-            background: 'white',
+            background: '#222',
             borderRadius: '16px',
             padding: '32px',
             maxWidth: '400px',
             width: '90%',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
+            color: '#fff'
           }} onClick={(e) => e.stopPropagation()}>
-            <h2 style={{ color: '#333', marginBottom: '8px' }}>Reset Password</h2>
-            <p style={{ color: '#666', fontSize: '14px', marginBottom: '24px' }}>
+            <h2 style={{ color: '#7ED957', marginBottom: '8px' }}>Reset Password</h2>
+            <p style={{ color: '#b6e6c9', fontSize: '14px', marginBottom: '24px' }}>
               Enter your email and we'll send you instructions to reset your password
             </p>
             {resetMessage ? (
@@ -171,14 +127,8 @@ const Login = () => {
                   value={resetEmail}
                   onChange={(e) => setResetEmail(e.target.value)}
                   required
-                  style={{
-                    width: '100%',
-                    padding: '12px 16px',
-                    border: '1.5px solid #E5E5E5',
-                    borderRadius: '8px',
-                    marginBottom: '16px',
-                    fontSize: '14px'
-                  }}
+                  className="login-input"
+                  style={{ background: 'rgba(255,255,255,0.10)', color: '#fff', border: 'none' }}
                 />
                 <div style={{ display: 'flex', gap: '12px' }}>
                   <button
@@ -188,9 +138,10 @@ const Login = () => {
                       flex: 1,
                       padding: '12px',
                       background: 'transparent',
-                      border: '1px solid #E5E5E5',
+                      border: '1px solid #444',
                       borderRadius: '8px',
                       cursor: 'pointer',
+                      color: '#b6e6c9',
                       fontSize: '14px'
                     }}
                   >

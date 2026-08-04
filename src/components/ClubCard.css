@@ -1,0 +1,106 @@
+.club-card-v2 {
+  background: var(--bg-secondary, #fff);
+  border: 1px solid var(--border-color, #e8ecf0);
+  border-radius: 16px;
+  padding: 16px 16px 14px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  display: block;
+  box-shadow: 0 2px 8px rgba(26, 34, 51, 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.club-card-v2:hover {
+  border-color: rgba(110, 181, 255, 0.35);
+  box-shadow: 0 6px 20px rgba(110, 181, 255, 0.08);
+}
+
+.club-card-v2:active {
+  transform: scale(0.99);
+}
+
+.club-card-v2__title {
+  display: block;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--text-primary, #1a2233);
+  margin: 0 0 6px;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.club-card-v2__desc {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-secondary, #4b5563);
+  margin: 0 0 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.club-card-v2__footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.club-card-v2__members {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary, #4b5563);
+}
+
+.club-card-v2__pill {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.club-card-v2__pill--academic {
+  background: rgba(58, 141, 255, 0.12);
+  color: #1d4ed8;
+}
+
+.club-card-v2__pill--arts {
+  background: rgba(168, 85, 247, 0.12);
+  color: #7c3aed;
+}
+
+.club-card-v2__pill--sports {
+  background: rgba(126, 217, 87, 0.18);
+  color: #15803d;
+}
+
+.club-card-v2__pill--service {
+  background: rgba(249, 115, 22, 0.12);
+  color: #c2410c;
+}
+
+.club-card-v2__pill--culture {
+  background: rgba(236, 72, 153, 0.1);
+  color: #be185d;
+}
+
+.club-card-v2__chevron {
+  font-size: 1.125rem;
+  color: var(--text-tertiary, #94a3b8);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .club-card-v2:active {
+    transform: none;
+  }
+}

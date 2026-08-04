@@ -1,55 +1,42 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './ClubCard.css';
 
-const ClubCard = ({ club, onJoin }) => {
-  const [isHovered, setIsHovered] = useState(false);
+const pillClass = (category) => {
+  const key = (category || '').toLowerCase();
+  const map = {
+    academic: 'club-card-v2__pill--academic',
+    arts: 'club-card-v2__pill--arts',
+    sports: 'club-card-v2__pill--sports',
+    service: 'club-card-v2__pill--service',
+    culture: 'club-card-v2__pill--culture',
+  };
+  return map[key] || 'club-card-v2__pill--academic';
+};
+
+const ClubCard = ({ club }) => {
   const navigate = useNavigate();
 
   return (
-    <div 
-      className="card club-card"
+    <button
+      type="button"
+      className="club-card-v2"
       onClick={() => navigate(`/clubs/${club.id}`)}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      style={{
-        position: 'relative',
-        transition: 'transform 0.2s',
-        transform: isHovered ? 'scale(1.02)' : 'scale(1)',
-        cursor: 'pointer'
-      }}
     >
-      <div>
-        <h3>{club.name}</h3>
-        <p style={{ 
-          color: '#666', 
-          fontSize: '14px',
-          opacity: isHovered ? 1 : 0.7,
-          transition: 'opacity 0.2s'
-        }}>
-          {club.description}
-        </p>
-        <p style={{ fontSize: '13px', color: '#888' }}>
-          👥 {club.members} members • 📁 {club.category}
-        </p>
+      <span className="club-card-v2__title">{club.name}</span>
+      <span className="club-card-v2__desc">{club.description}</span>
+      <div className="club-card-v2__footer">
+        <span className="club-card-v2__members">
+          {club.members} members
+        </span>
+        <span className={`club-card-v2__pill ${pillClass(club.category)}`}>
+          {club.category}
+        </span>
+        <span className="club-card-v2__chevron" aria-hidden="true">
+          ›
+        </span>
       </div>
-      {isHovered && (
-        <div style={{
-          position: 'absolute',
-          bottom: '10px',
-          right: '10px'
-        }}>
-          <button 
-            className="btn" 
-            onClick={(e) => {
-              e.stopPropagation();
-              onJoin(club.id);
-            }}
-          >
-            Join Club
-          </button>
-        </div>
-      )}
-    </div>
+    </button>
   );
 };
 

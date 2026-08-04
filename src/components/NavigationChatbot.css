@@ -1,4 +1,13 @@
 .nav-chatbot{position:fixed;right:20px;bottom:20px;z-index:1000}
+@media (max-width:768px){
+  .nav-chatbot{
+    right:16px;
+    bottom:calc(76px + env(safe-area-inset-bottom,0px));
+  }
+  .nav-chatbot .chat-panel{
+    max-width:calc(100vw - 32px);
+  }
+}
 .chat-toggle{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--vibrant-green),var(--soft-blue));border:none;color:white;font-size:24px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.18)}
 .nav-chatbot.open .chat-panel{display:flex}
 .chat-panel{display:none;flex-direction:column;width:320px;height:420px;background:var(--bg-primary);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.2);overflow:hidden;margin-bottom:8px}

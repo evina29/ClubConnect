@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Home.css';
-import { schools, languages } from '../data/onboardingData.js';
-import { useLanguage } from '../context/LanguageContext.jsx';
+import { schools } from '../data/onboardingData.js';
+import LanguageSelector from '../components/LanguageSelector.jsx';
 
 const Settings = () => {
   const [activeTab, setActiveTab] = useState('profile');

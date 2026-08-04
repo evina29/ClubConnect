@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>ClubConnect — Logo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        font-family: 'Outfit', system-ui, sans-serif;
+        background: #e8eaed;
+        color: #1a2233;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 24px;
+      }
+      .sheet {
+        text-align: center;
+        max-width: 420px;
+      }
+      .mark-svg {
+        display: block;
+        width: min(220px, 62vw);
+        height: auto;
+        margin: 0 auto 28px;
+      }
+      .wordmark {
+        font-size: clamp(2.25rem, 10vw, 3.25rem);
+        font-weight: 800;
+        letter-spacing: -0.07em;
+        line-height: 1;
+        background: linear-gradient(92deg, #7ed957 0%, #52c46a 28%, #6eb5ff 72%, #3a8dff 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .tagline {
+        margin-top: 16px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #64748b;
+        letter-spacing: 0.01em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sheet">
+      <!-- Coded mark: sprout (green + blue petals, three green dots) — no PNG -->
+      <svg
+        class="mark-svg"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 256 256"
+        role="img"
+        aria-labelledby="logoTitle logoDesc"
+      >
+        <title id="logoTitle">ClubConnect</title>
+        <desc id="logoDesc">
+          Vector logo: two rounded petals in brand green and blue with three
+          green circles in a triangle above
+        </desc>
+        <defs>
+          <linearGradient id="ccLeafGreen" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#5bb83d" />
+            <stop offset="100%" stop-color="#7ed957" />
+          </linearGradient>
+          <linearGradient id="ccLeafBlue" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#2b6fc9" />
+            <stop offset="100%" stop-color="#6eb5ff" />
+          </linearGradient>
+          <radialGradient id="ccDot" cx="32%" cy="30%" r="70%">
+            <stop offset="0%" stop-color="#a8e878" />
+            <stop offset="45%" stop-color="#7ed957" />
+            <stop offset="100%" stop-color="#4a9d32" />
+          </radialGradient>
+          <filter id="ccLift" x="-25%" y="-25%" width="150%" height="150%">
+            <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#1a2233" flood-opacity="0.18" />
+          </filter>
+          <filter id="ccLiftSm" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#1a2233" flood-opacity="0.16" />
+          </filter>
+        </defs>
+
+        <g filter="url(#ccLift)">
+          <!-- Left petal (smaller, green) -->
+          <path
+            fill="url(#ccLeafGreen)"
+            d="M 128 234
+               C 102 222 36 178 28 118
+               C 22 78 52 44 88 52
+               C 112 56 124 92 126 138
+               C 128 182 128 210 128 234 Z"
+          />
+          <!-- Right petal (larger, blue) -->
+          <path
+            fill="url(#ccLeafBlue)"
+            d="M 128 234
+               C 154 220 224 170 232 108
+               C 238 66 206 36 168 46
+               C 142 52 130 92 128 138
+               C 126 186 127 212 128 234 Z"
+          />
+        </g>
+
+        <!-- Three dots: two top, one below (triangle) -->
+        <g filter="url(#ccLiftSm)">
+          <circle cx="92" cy="88" r="27" fill="url(#ccDot)" />
+          <circle cx="164" cy="88" r="27" fill="url(#ccDot)" />
+          <circle cx="128" cy="132" r="25" fill="url(#ccDot)" />
+        </g>
+        <g pointer-events="none">
+          <ellipse cx="84" cy="78" rx="9" ry="7" fill="rgba(255,255,255,0.45)" />
+          <ellipse cx="156" cy="78" rx="9" ry="7" fill="rgba(255,255,255,0.42)" />
+          <ellipse cx="121" cy="122" rx="8" ry="6" fill="rgba(255,255,255,0.4)" />
+        </g>
+      </svg>
+
+      <h1 class="wordmark">ClubConnect</h1>
+      <p class="tagline">Your clubs, one place</p>
+    </div>
+  </body>
+</html>
