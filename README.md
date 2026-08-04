@@ -1,7 +1,7 @@
 # ClubConnect
 
 <p align="center">
-  <img src="screenshots/home.png" alt="ClubConnect screenshot" width="100%" />
+  <img src="screenshots/home.png" alt="ClubConnect screenshot" width="360" />
 </p>
 
 ## What it is
@@ -39,8 +39,3 @@ npm run dev
 - Chart.js for the graphs on the analytics page
 - the qrcode library for making the event check in codes
 - localStorage to save accounts and data, so you can try it without setting up a backend
-
-## A few honest notes
-- This is a student project so it is still a work in progress and some parts are rougher than others
-- I built it over about a month, roughly 40 hours of work
-- Feel free to click around, break stuff, and tell me what you think
