@@ -26,6 +26,12 @@ const PATHS = {
   music: <><path d="M9 18V5l10-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="16" cy="16" r="3" /></>,
   leaf: <><path d="M4 20C4 11 11 4 20 4c0 9-7 16-16 16Z" /><path d="M4 20 14 10" /></>,
   ball: <><circle cx="12" cy="12" r="8.5" /><path d="M12 3.5v17M3.5 12h17M6 6l12 12M18 6 6 18" /></>,
+  globe: <><circle cx="12" cy="12" r="8.5" /><path d="M3.5 12h17M12 3.5c2.5 2.3 3.8 5.3 3.8 8.5s-1.3 6.2-3.8 8.5c-2.5-2.3-3.8-5.3-3.8-8.5S9.5 5.8 12 3.5Z" /></>,
+  logout: <><path d="M14 4H6v16h8" /><path d="M18 12H10m8 0-3-3m3 3-3 3" /></>,
+  edit: <><path d="M14 5l5 5M4 20l1-4L16 5l3 3L8 19l-4 1Z" /></>,
+  camera: <><path d="M4 8h3l2-2h6l2 2h3v11H4V8Z" /><circle cx="12" cy="13" r="3.2" /></>,
+  info: <><circle cx="12" cy="12" r="8.5" /><path d="M12 11v5M12 8h.01" /></>,
+  flame: <><path d="M12 3s5 4 5 9a5 5 0 0 1-10 0c0-1.5.7-2.8 1.5-3.5C9 10 10 12 10 12s-.5-4 2-9Z" /></>,
 };
 
 export default function Icon({ name, size = 20, className = '', style }) {

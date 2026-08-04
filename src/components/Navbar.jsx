@@ -1,11 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Icon from './Icon.jsx';
 
 const tabs = [
-  { to: '/app', label: 'Home', icon: '🏠', end: true },
-  { to: '/clubs', label: 'Clubs', icon: '👥', end: false },
-  { to: '/app/calendar', label: 'Events', icon: '📅', end: false },
-  { to: '/app/profile', label: 'Profile', icon: '👤', end: false },
+  { to: '/app', label: 'Home', icon: 'home', end: true },
+  { to: '/clubs', label: 'Clubs', icon: 'users', end: false },
+  { to: '/app/calendar', label: 'Events', icon: 'calendar', end: false },
+  { to: '/app/profile', label: 'Profile', icon: 'user', end: false },
 ];
 
 const Navbar = () => {
@@ -22,7 +23,7 @@ const Navbar = () => {
               }
             >
               <span className="nav-link-icon" aria-hidden="true">
-                {icon}
+                <Icon name={icon} size={22} />
               </span>
               <span className="nav-link-label">{label}</span>
             </NavLink>
