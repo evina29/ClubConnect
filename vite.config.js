@@ -2,11 +2,9 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
-// Local dev MUST use http://localhost:5173/Club-Connect/ (matches GitHub Pages).
+// Relative base ('./') so the built app works no matter what the GitHub Pages
+// repo/subpath is named. The app uses HashRouter, so deep links work too.
 export default defineConfig({
-  base: '/Club-Connect/',
+  base: './',
   plugins: [react()],
-  server: {
-    open: '/Club-Connect/',
-  },
 })
