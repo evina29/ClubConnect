@@ -6,6 +6,10 @@
 
 <p align="center">One friendly home for everything happening in your school clubs.</p>
 
+<p align="center">
+  <img src="screenshots/home.png" alt="ClubConnect home screen" width="100%" />
+</p>
+
 ## What it is
 
 ClubConnect is a web app that helps students actually stay connected to the clubs they care about. Instead of losing track of meetings in group chats, missing sign up forms, and forgetting which events you said you would go to, everything lives in one place. You can browse clubs, join the ones you like, see what is coming up on a shared calendar, check in to events with a QR code, chat with other members, and watch your involvement add up over time.
