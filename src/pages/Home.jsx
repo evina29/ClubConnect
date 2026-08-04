@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import Icon from '../components/Icon';
 import './Home.css';
 
 const CATEGORIES = ['All', 'Academic', 'Service', 'Arts', 'Sports'];
@@ -16,29 +17,29 @@ const UPCOMING_EVENTS = [
   {
     id: 'cleanup',
     title: 'Environmental Clean-Up',
-    meta: 'May 20 • 3:30 PM',
-    icon: '🌿',
+    meta: 'May 20 . 3:30 PM',
+    icon: 'leaf',
     route: '/app/events/cleanup',
   },
   {
     id: 'deca',
     title: 'DECA General Meeting',
-    meta: 'May 22 • 4:00 PM',
-    icon: '📊',
+    meta: 'May 22 . 4:00 PM',
+    icon: 'chart',
     route: '/app/events/deca',
   },
   {
     id: 'jazz',
     title: 'Jazz Band Spring Concert',
-    meta: 'May 24 • 7:00 PM',
-    icon: '🎷',
+    meta: 'May 24 . 7:00 PM',
+    icon: 'music',
     route: '/app/events/jazz',
   },
   {
     id: 'soccer',
     title: 'Varsity Soccer vs. Westview',
-    meta: 'May 28 • 5:00 PM',
-    icon: '⚽',
+    meta: 'May 28 . 5:00 PM',
+    icon: 'ball',
     route: '/app/events/soccer',
   },
 ];
@@ -58,20 +59,14 @@ const Home = () => {
     <div className="dashboard dashboard--discover">
       <header className="discover-header">
         <h1 className="discover-greeting">
-          Hi,{' '}
-          <span className="discover-greeting-highlight">{firstName}</span>!{' '}
-          <span className="discover-greeting-emoji" aria-hidden="true">
-            👋
-          </span>
+          Hi, <span className="discover-greeting-highlight">{firstName}</span>
         </h1>
         <Link
           to="/app/profile"
           className="discover-profile-link"
           aria-label="Open profile"
         >
-          <span className="discover-profile-icon" aria-hidden="true">
-            {user?.profilePic || '👤'}
-          </span>
+          <Icon name="user" size={22} />
         </Link>
       </header>
 
@@ -80,9 +75,7 @@ const Home = () => {
           Discover Clubs
         </h2>
         <label className="discover-search" htmlFor="club-search">
-          <span className="discover-search-icon" aria-hidden="true">
-            🔍
-          </span>
+          <Icon name="search" size={18} className="discover-search-icon" />
           <input
             id="club-search"
             type="search"
@@ -122,14 +115,11 @@ const Home = () => {
           className="featured-club-card"
           onClick={() => navigate(`/clubs/${FEATURED_CLUB.id}`)}
         >
-          <div className="featured-club-card__bg" aria-hidden="true" />
-          <div className="featured-club-card__content">
-            <h3 className="featured-club-card__title">{FEATURED_CLUB.name}</h3>
-            <p className="featured-club-card__tagline">{FEATURED_CLUB.tagline}</p>
-            <p className="featured-club-card__meta">
-              {FEATURED_CLUB.members} Members
-            </p>
-          </div>
+          <h3 className="featured-club-card__title">{FEATURED_CLUB.name}</h3>
+          <p className="featured-club-card__tagline">{FEATURED_CLUB.tagline}</p>
+          <p className="featured-club-card__meta">
+            {FEATURED_CLUB.members} Members
+          </p>
         </button>
       </section>
 
@@ -157,15 +147,12 @@ const Home = () => {
                 className="event-row"
                 onClick={() => navigate(ev.route)}
               >
-                <span className="event-row__thumb" aria-hidden="true">
-                  {ev.icon}
+                <span className="event-row__thumb">
+                  <Icon name={ev.icon} size={20} />
                 </span>
                 <span className="event-row__text">
                   <span className="event-row__title">{ev.title}</span>
                   <span className="event-row__meta">{ev.meta}</span>
-                </span>
-                <span className="event-row__chevron" aria-hidden="true">
-                  ›
                 </span>
               </button>
             </li>
