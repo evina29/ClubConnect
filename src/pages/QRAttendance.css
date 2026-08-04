@@ -219,7 +219,7 @@
   font-weight: 700;
   padding: 6px 12px;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(126, 217, 87, 0.25), rgba(110, 181, 255, 0.25));
+  background: rgba(126, 217, 87, 0.25);
   color: var(--text-primary, #1a2233);
   margin-bottom: 14px;
 }
@@ -247,7 +247,7 @@
 
 .qr-btn--primary {
   color: #fff;
-  background: linear-gradient(90deg, var(--vibrant-green, #7ed957), var(--soft-blue, #6eb5ff));
+  background: var;
   box-shadow: 0 4px 14px rgba(126, 217, 87, 0.28);
 }
 

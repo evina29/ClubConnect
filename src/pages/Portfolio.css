@@ -10,7 +10,7 @@
   align-items: center;
   margin-bottom: 2rem;
   padding: 2rem;
-  background: linear-gradient(135deg, #7ED957 0%, #6EB5FF 100%);
+  background: #7ED957;
   border-radius: 20px;
   color: white;
 }
@@ -220,7 +220,7 @@
 
 .skill-fill {
   height: 100%;
-  background: linear-gradient(90deg, #7ED957, #6EB5FF);
+  background: #7ED957;
   transition: width 1s ease;
 }
 
@@ -277,7 +277,7 @@
 }
 
 .highlight-box {
-  background: linear-gradient(135deg, #F9F9F9, #FFFFFF);
+  background: #F9F9F9;
   padding: 1.5rem;
   border-radius: 12px;
   border-left: 4px solid #FFE066;

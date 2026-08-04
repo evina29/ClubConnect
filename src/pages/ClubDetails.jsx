@@ -320,7 +320,7 @@ const ClubDetails = () => {
                 <div style={{
                   width: '80%',
                   height: '100%',
-                  background: 'linear-gradient(90deg, var(--accent-primary), var(--accent-green))',
+                  background: 'var',
                   borderRadius: '6px',
                   animation: 'fillBar 1s ease-out'
                 }}></div>

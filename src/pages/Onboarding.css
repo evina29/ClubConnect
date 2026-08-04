@@ -4,9 +4,7 @@
   align-items: center;
   justify-content: center;
   padding: 16px;
-  background: radial-gradient(circle at top, #7ED95722, transparent 60%),
-    radial-gradient(circle at bottom, #3A8DFF22, transparent 60%),
-    linear-gradient(135deg, var(--bg-cream, #FFF8F0), var(--bg-light-beige, #FEFDFB));
+  background: #ffffff;
 }
 
 .onboarding-phone-frame {
@@ -54,7 +52,7 @@
   width: 72px;
   height: 72px;
   border-radius: 24px;
-  background: radial-gradient(circle at top, #FFFFFF, #E5F0FF);
+  background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,7 +95,7 @@
 
 .onboarding-dot.active {
   width: 20px;
-  background: linear-gradient(135deg, var(--accent-primary, #3A8DFF), var(--accent-green, #7ED957));
+  background: var;
 }
 
 .onboarding-footer {
@@ -115,7 +113,7 @@
   font-size: 0.95rem;
   font-weight: 600;
   color: #FFFFFF;
-  background: linear-gradient(135deg, var(--accent-primary, #3A8DFF), var(--accent-green, #7ED957));
+  background: var;
   box-shadow: var(--shadow-button, 0 4px 12px rgba(58, 141, 255, 0.25));
 }
 

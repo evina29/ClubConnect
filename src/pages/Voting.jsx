@@ -365,8 +365,8 @@ const Voting = () => {
                         width: `${percentage}%`,
                         height: '100%',
                         background: isUserVote 
-                          ? 'linear-gradient(90deg, var(--accent-primary), var(--accent-green))'
-                          : 'linear-gradient(90deg, rgba(59, 130, 246, 0.6), rgba(34, 197, 94, 0.6))',
+                          ? 'var'
+                          : 'rgba(59, 130, 246, 0.6)',
                         display: 'flex',
                         alignItems: 'center',
                         paddingLeft: '16px',

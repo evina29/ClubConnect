@@ -2,7 +2,7 @@
 
 .register-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #FFF8F0 0%, #FEFDFB 50%, #F9F9F9 100%);
+  background: #FFF8F0;
   padding: 40px 20px;
   display: flex;
   align-items: center;
@@ -13,7 +13,6 @@
   max-width: 600px;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 40px;
   border: 1px solid rgba(126, 217, 87, 0.1);

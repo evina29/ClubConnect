@@ -60,7 +60,7 @@
 }
 
 .metric-card.highlight {
-  background: linear-gradient(135deg, #F9F9F9 0%, #FFFFFF 100%);
+  background: #F9F9F9;
 }
 
 .metric-icon {
@@ -139,7 +139,7 @@
 }
 
 .insight-card {
-  background: linear-gradient(135deg, #7ED957 0%, #6EB5FF 100%);
+  background: #7ED957;
   border-radius: 16px;
   padding: 1.5rem;
   display: flex;

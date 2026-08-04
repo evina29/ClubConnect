@@ -201,7 +201,7 @@ const Projects = () => {
               width: '28px',
               height: '28px',
               borderRadius: '50%',
-              background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-green))',
+              background: 'var',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -231,7 +231,7 @@ const Projects = () => {
                     width: '24px',
                     height: '24px',
                     borderRadius: '50%',
-                    background: 'linear-gradient(135deg, #9333EA, #F97316)',
+                    background: '#9333EA',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -285,7 +285,7 @@ const Projects = () => {
             <div style={{
               width: `${project.progress}%`,
               height: '100%',
-              background: 'linear-gradient(90deg, var(--accent-primary), var(--accent-green))',
+              background: 'var',
               transition: 'width 0.5s ease-out'
             }}></div>
           </div>
@@ -606,7 +606,7 @@ const Projects = () => {
                     width: '24px',
                     height: '24px',
                     borderRadius: '50%',
-                    background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-green))',
+                    background: 'var',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',

@@ -856,7 +856,7 @@ const Calendar = () => {
                     width: '36px',
                     height: '36px',
                     borderRadius: '50%',
-                    background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-green))',
+                    background: 'var',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',

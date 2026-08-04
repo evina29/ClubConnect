@@ -60,7 +60,6 @@
 /* Navbar */
 .landing-navbar {
   background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
   color: var(--text-primary);
   padding: 1rem 0;
   position: fixed;
@@ -84,10 +83,7 @@
 .landing-navbar .logo {
   font-size: 1.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--vibrant-green), var(--soft-blue));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var;
 }
 
 /* Desktop Navigation */
@@ -223,7 +219,7 @@
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #FFF8F0 0%, #FEFDFB 50%, #F9F9F9 100%);
+  background: #FFF8F0;
   color: var(--text-primary);
   padding: 120px 16px 64px;
   min-height: auto;
@@ -238,7 +234,7 @@
   position: absolute;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(126, 217, 87, 0.15), transparent);
+  background: rgba(126, 217, 87, 0.15);
   border-radius: 50%;
   top: 10%;
   left: 5%;
@@ -251,7 +247,7 @@
   position: absolute;
   width: 250px;
   height: 250px;
-  background: radial-gradient(circle, rgba(110, 181, 255, 0.15), transparent);
+  background: rgba(110, 181, 255, 0.15);
   border-radius: 50%;
   bottom: 15%;
   right: 10%;
@@ -407,7 +403,7 @@
 
 /* Features */
 .features {
-  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+  background: var;
 }
 
 .features-grid {
@@ -599,7 +595,7 @@
 
 /* CTA */
 .cta {
-  background: linear-gradient(135deg, var(--vibrant-green) 0%, var(--soft-blue) 100%);
+  background: var;
   text-align: center;
   padding: 96px 32px;
   color: var(--text-white);

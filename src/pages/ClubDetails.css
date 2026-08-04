@@ -6,7 +6,7 @@
 /* Banner */
 .club-banner {
   height: 200px;
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-green));
+  background: var;
   position: relative;
   overflow: hidden;
 }
@@ -44,7 +44,6 @@
   width: 80px;
   height: 80px;
   background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -64,7 +63,6 @@
   display: inline-block;
   padding: 6px 14px;
   background-color: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 20px;
   color: white;
@@ -80,7 +78,6 @@
 .quick-action-btn {
   padding: 10px 20px;
   background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 8px;
   color: white;
@@ -184,7 +181,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-green));
+  background: var;
   display: flex;
   align-items: center;
   justify-content: center;

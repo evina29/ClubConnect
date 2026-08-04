@@ -316,7 +316,7 @@ const Attendance = () => {
                 <div style={{
                   width: '85%',
                   height: '100%',
-                  background: 'linear-gradient(90deg, var(--accent-primary), var(--accent-green))',
+                  background: 'var',
                   borderRadius: '8px',
                   transition: 'width 1s ease-out'
                 }}></div>
@@ -394,10 +394,10 @@ const Attendance = () => {
                         width: `${club.percentage}%`,
                         height: '100%',
                         background: club.percentage >= 85 
-                          ? 'linear-gradient(90deg, var(--accent-green), #4ADE80)' 
+                          ? 'var' 
                           : club.percentage >= 70
-                          ? 'linear-gradient(90deg, var(--accent-yellow), #FCD34D)'
-                          : 'linear-gradient(90deg, var(--accent-red), #FCA5A5)',
+                          ? 'var'
+                          : 'var',
                         transition: 'width 0.8s ease-out'
                       }}></div>
                     </div>

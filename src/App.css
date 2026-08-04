@@ -173,7 +173,7 @@ a:focus-visible {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-primary, #3A8DFF), var(--accent-green, #7ED957));
+  background: #2e7d32;
   display: flex;
   align-items: center;
   justify-content: center;
