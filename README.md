@@ -1,78 +1,46 @@
-<p align="center">
-  <img src="public/clubconnect-mark.png" alt="ClubConnect logo" width="180" />
-</p>
-
-<h1 align="center">ClubConnect</h1>
-
-<p align="center">One friendly home for everything happening in your school clubs.</p>
+# ClubConnect
 
 <p align="center">
-  <img src="screenshots/home.png" alt="ClubConnect home screen" width="100%" />
+  <img src="screenshots/home.png" alt="ClubConnect screenshot" width="100%" />
 </p>
 
 ## What it is
+- ClubConnect is a web app that keeps everything about your school clubs in one spot
+- You can find clubs, see events, RSVP, check in to stuff with a QR code, and keep track of what you are part of
+- Basically instead of clubs living in five different group chats and a paper sign up sheet, it is all in one place
 
-ClubConnect is a web app that helps students actually stay connected to the clubs they care about. Instead of losing track of meetings in group chats, missing sign up forms, and forgetting which events you said you would go to, everything lives in one place. You can browse clubs, join the ones you like, see what is coming up on a shared calendar, check in to events with a QR code, chat with other members, and watch your involvement add up over time.
+## Why I made it
+- Honestly the whole reason was that organizing clubs is super messy and can get really hard
+- Nobody knows what is going on, sign ups get lost, reminders get buried, and it is confusing for new people
+- I wanted to build the thing I wished my school had so club stuff is actually easy to keep up with
 
-I wanted it to feel less like a boring school portal and more like something you would genuinely want to open. So it has a soft pastel look, a little onboarding flow, some gamification with points and badges, and even a couple of helpful chatbots that guide you around the app and make it easier to use.
+## What you can do in it
+- Browse and join clubs
+- See upcoming events on a calendar
+- RSVP to events and check in with a QR code
+- Earn points and badges for showing up and taking part
+- Keep a little portfolio of everything you have been involved in
+- There is also a feed, messages, notifications, voting, and an analytics page
 
-## What you can do with it
-
-Here are the main things ClubConnect does today:
-
-- Browse and join clubs, and open a full page for each one with its details and members
-- See every event on a shared calendar and open individual event pages
-- Check in to events instantly with QR code attendance
-- Earn points and badges as you show up and take part, with a gamification page to track it all
-- View analytics and charts about engagement and activity
-- Post to a social feed, send messages, and get notifications
-- Build a student portfolio that keeps a record of everything you have been involved in
-- Run votes and polls, and organize club projects
-- Switch languages on the fly, with support for English, Spanish, French, Chinese, and Arabic
-- Use built in accessibility tools and a navigation helper so the app works for everyone
-- Install it like an app on your phone, since it is a Progressive Web App
-
-## Try it out
-
-You will need [Node.js](https://nodejs.org/) installed. Then, from the project folder:
+## How to try it
+- You need Node.js installed on your computer
+- Then open the project folder and run these:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Now open this exact address in your browser:
+- It will give you a link (something like `http://localhost:5173/`), open that in your browser and you are in
 
-```
-http://localhost:5173/Club-Connect/
-```
+## Tools I used
+- React and React Router for the pages and moving around the app
+- Vite to run and build everything
+- Chart.js for the graphs on the analytics page
+- the qrcode library for making the event check in codes
+- localStorage to save accounts and data, so you can try it without setting up a backend
 
-That last part, `/Club-Connect/`, matters. The app is set up to live under that path, so plain `http://localhost:5173/` will not load it.
-
-Want a production build instead?
-
-```bash
-npm run build
-npm run preview
-```
-
-## Tools and technologies
-
-The app is built with React and Vite, with a couple of libraries doing the heavy lifting for the bigger features:
-
-- **React 18 and React Router** for the interface and page navigation
-- **Vite** as the build tool and dev server
-- **Chart.js** with react-chartjs-2 for the analytics graphs
-- **qrcode** for generating the event check in codes
-
-Accounts and data are kept in the browser for now using localStorage, so you can try the whole thing without setting up any backend.
-
-## What inspired it
-
-The idea came from watching how messy club life gets at school. Sign ups happen on paper, reminders get buried in group chats, attendance is tracked in random spreadsheets, and it is genuinely hard for a new student to figure out what clubs even exist. I thought all of that could live in one clean, welcoming app that students actually enjoy using.
-
-So I set out to build the tool I wished my school had. Something that makes joining a club feel easy, keeps everyone in the loop, and quietly rewards you for staying involved. ClubConnect is my take on that.
-
-## A note
-
-This is a student project and it is very much a work in progress, so if you poke around and find something rough, that is part of the fun. Feel free to explore it, break it, and make it your own.
+## A few honest notes
+- This is a student project so it is still a work in progress and some parts are rougher than others
+- I built it over about a month, roughly 40 hours of work
+- Feel free to click around, break stuff, and tell me what you think
