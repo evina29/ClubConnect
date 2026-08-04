@@ -42,12 +42,12 @@ const Login = () => {
   };
 
   return (
-    <div className="login-bg">
-      <div className="login-glass">
-        <div className="login-title">Welcome Back</div>
-        <div className="login-desc">Sign in to continue to ClubConnect</div>
-        <form className="login-form" onSubmit={handleLogin}>
-          <input
+ <div className="login-bg">
+ <div className="login-glass">
+ <div className="login-title">Welcome Back</div>
+ <div className="login-desc">Sign in to continue to ClubConnect</div>
+ <form className="login-form" onSubmit={handleLogin}>
+ <input
             type="email"
             className="login-input"
             placeholder="Email"
@@ -55,7 +55,7 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-          <input
+ <input
             type="password"
             className="login-input"
             placeholder="Password"
@@ -63,34 +63,34 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <div style={{ textAlign: 'right', marginBottom: '18px' }}>
-            <a 
+ <div style={{ textAlign: 'right', marginBottom: '18px' }}>
+ <a 
               href="#" 
               className="login-link"
               onClick={(e) => { e.preventDefault(); setShowResetModal(true); }}
             >
-              Forgot password?
-            </a>
-          </div>
-          {error && <div className="login-error">{error}</div>}
-          <button 
+             Forgot password?
+ </a>
+ </div>
+         {error && <div className="login-error">{error}</div>}
+ <button 
             type="submit" 
             className="login-btn"
             disabled={loading}
             aria-label="Sign in to your account"
           >
-            {loading ? 'Signing in...' : 'Sign In'}
-          </button>
-        </form>
-        <div style={{ textAlign: 'center', color: '#666', fontSize: '0.95rem' }}>
-          Don't have an account?{' '}
-          <Link to="/app/register" className="login-link">Sign up</Link>
-        </div>
-      </div>
+           {loading ? 'Signing in...' : 'Sign In'}
+ </button>
+ </form>
+ <div style={{ textAlign: 'center', color: '#666', fontSize: '0.95rem' }}>
+         Don't have an account?{' '}
+ <Link to="/app/register" className="login-link">Sign up</Link>
+ </div>
+ </div>
 
-      {/* Password Reset Modal */}
+     {/* Password Reset Modal */}
       {showResetModal && (
-        <div style={{
+ <div style={{
           position: 'fixed',
           top: 0,
           left: 0,
@@ -102,7 +102,7 @@ const Login = () => {
           justifyContent: 'center',
           zIndex: 1000
         }} onClick={() => setShowResetModal(false)}>
-          <div style={{
+ <div style={{
             background: '#fff',
             borderRadius: '8px',
             padding: '32px',
@@ -111,17 +111,17 @@ const Login = () => {
             boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
             color: '#222'
           }} onClick={(e) => e.stopPropagation()}>
-            <h2 style={{ color: '#222', marginBottom: '8px' }}>Reset Password</h2>
-            <p style={{ color: '#666', fontSize: '14px', marginBottom: '24px' }}>
-              Enter your email and we'll send you instructions to reset your password
-            </p>
-            {resetMessage ? (
-              <p style={{ color: '#2e7d32', fontSize: '14px', textAlign: 'center', padding: '20px' }}>
-                ✓ {resetMessage}
-              </p>
-            ) : (
-              <form onSubmit={handleReset}>
-                <input
+ <h2 style={{ color: '#222', marginBottom: '8px' }}>Reset Password</h2>
+ <p style={{ color: '#666', fontSize: '14px', marginBottom: '24px' }}>
+             Enter your email and we'll send you instructions to reset your password
+ </p>
+           {resetMessage ? (
+ <p style={{ color: '#2e7d32', fontSize: '14px', textAlign: 'center', padding: '20px' }}>
+                {resetMessage}
+ </p>
+           ) : (
+ <form onSubmit={handleReset}>
+ <input
                   type="email"
                   placeholder="Email address"
                   value={resetEmail}
@@ -129,8 +129,8 @@ const Login = () => {
                   required
                   className="login-input"
                 />
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  <button
+ <div style={{ display: 'flex', gap: '12px' }}>
+ <button
                     type="button"
                     onClick={() => setShowResetModal(false)}
                     style={{
@@ -144,9 +144,9 @@ const Login = () => {
                       fontSize: '14px'
                     }}
                   >
-                    Cancel
-                  </button>
-                  <button
+                   Cancel
+ </button>
+ <button
                     type="submit"
                     style={{
                       flex: 1,
@@ -160,16 +160,16 @@ const Login = () => {
                       fontWeight: '600'
                     }}
                   >
-                    Send Reset Link
-                  </button>
-                </div>
-              </form>
-            )}
-          </div>
-        </div>
-      )}
-    </div>
-  );
+                   Send Reset Link
+ </button>
+ </div>
+ </form>
+           )}
+ </div>
+ </div>
+     )}
+ </div>
+ );
 };
 
 export default Login;

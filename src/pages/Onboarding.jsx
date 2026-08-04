@@ -9,7 +9,7 @@ const steps = [
     subtitle: 'Your campus life, in one place.',
     description:
       'Discover clubs, track events, and stay connected with everything happening at your school.',
-    emoji: '📚',
+    emoji: '',
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const steps = [
     subtitle: 'Join clubs that match your interests.',
     description:
       'Browse dozens of clubs, see what they do, and join instantly. No more posters you never see again.',
-    emoji: '🧑‍🤝‍🧑',
+    emoji: '',
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const steps = [
     subtitle: 'Smart reminders and attendance tracking.',
     description:
       'View all your club meetings and events in one calendar, and track your participation over time.',
-    emoji: '📅',
+    emoji: '',
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const steps = [
     subtitle: 'Create your account in seconds.',
     description:
       'Sign up to start building your portfolio of club involvement, projects, and leadership.',
-    emoji: '🚀',
+    emoji: '',
   },
 ];
 
@@ -56,32 +56,32 @@ const Onboarding = () => {
   };
 
   return (
-    <div className="onboarding-shell">
-      <div className="onboarding-phone-frame">
-        <header className="onboarding-header">
-          <span className="onboarding-logo">🏫 Club-Connect</span>
-          <button
+ <div className="onboarding-shell">
+ <div className="onboarding-phone-frame">
+ <header className="onboarding-header">
+ <span className="onboarding-logo"> Club-Connect</span>
+ <button
             type="button"
             className="onboarding-skip"
             onClick={handleSkip}
           >
-            Skip
-          </button>
-        </header>
+           Skip
+ </button>
+ </header>
 
-        <main className="onboarding-main">
-          <div className="onboarding-emoji" aria-hidden="true">
-            {current.emoji}
-          </div>
-          <h1 className="onboarding-title">{current.title}</h1>
-          {current.subtitle && (
-            <p className="onboarding-subtitle">{current.subtitle}</p>
-          )}
-          <p className="onboarding-description">{current.description}</p>
+ <main className="onboarding-main">
+ <div className="onboarding-emoji" aria-hidden="true">
+           {current.emoji}
+ </div>
+ <h1 className="onboarding-title">{current.title}</h1>
+         {current.subtitle && (
+ <p className="onboarding-subtitle">{current.subtitle}</p>
+         )}
+ <p className="onboarding-description">{current.description}</p>
 
-          <div className="onboarding-dots" aria-label="Onboarding progress">
-            {steps.map((step, index) => (
-              <button
+ <div className="onboarding-dots" aria-label="Onboarding progress">
+           {steps.map((step, index) => (
+ <button
                 key={step.id}
                 type="button"
                 className={`onboarding-dot${
@@ -91,29 +91,29 @@ const Onboarding = () => {
                 aria-label={`Go to step ${index + 1}`}
                 aria-current={index === stepIndex ? 'step' : undefined}
               />
-            ))}
-          </div>
-        </main>
+           ))}
+ </div>
+ </main>
 
-        <footer className="onboarding-footer">
-          <button
+ <footer className="onboarding-footer">
+ <button
             type="button"
             className="onboarding-primary"
             onClick={handleNext}
           >
-            {isLastStep ? 'Create account' : 'Next'}
-          </button>
-          <button
+           {isLastStep ? 'Create account' : 'Next'}
+ </button>
+ <button
             type="button"
             className="onboarding-secondary"
             onClick={() => navigate('/app/login')}
           >
-            I already have an account
-          </button>
-        </footer>
-      </div>
-    </div>
-  );
+           I already have an account
+ </button>
+ </footer>
+ </div>
+ </div>
+ );
 };
 
 export default Onboarding;

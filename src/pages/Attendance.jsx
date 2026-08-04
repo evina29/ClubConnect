@@ -10,7 +10,7 @@ const Attendance = () => {
     { 
       id: 1, 
       name: 'Tech Club', 
-      icon: '💻', 
+      icon: '', 
       attended: 12, 
       total: 15, 
       percentage: 80,
@@ -28,7 +28,7 @@ const Attendance = () => {
     { 
       id: 2, 
       name: 'Art Club', 
-      icon: '🎨', 
+      icon: '', 
       attended: 10, 
       total: 12, 
       percentage: 83,
@@ -45,7 +45,7 @@ const Attendance = () => {
     { 
       id: 3, 
       name: 'Debate Team', 
-      icon: '🗣️', 
+      icon: '', 
       attended: 8, 
       total: 10, 
       percentage: 80,
@@ -61,7 +61,7 @@ const Attendance = () => {
     { 
       id: 4, 
       name: 'Science Olympiad', 
-      icon: '🔬', 
+      icon: '', 
       attended: 15, 
       total: 15, 
       percentage: 100,
@@ -74,7 +74,7 @@ const Attendance = () => {
       ],
       notes: 'Perfect attendance!',
       hasBadge: true,
-      badge: '🎖️ Perfect Attendance'
+      badge: ' Perfect Attendance'
     }
   ];
   
@@ -89,18 +89,18 @@ const Attendance = () => {
   const getStatusInfo = (status) => {
     switch(status) {
       case 'on-track':
-        return { color: 'var(--accent-green)', bg: 'rgba(34, 197, 94, 0.15)', label: '🟢 On Track', goalText: 'above 85% goal' };
+        return { color: 'var(--accent-green)', bg: 'rgba(34, 197, 94, 0.15)', label: ' On Track', goalText: 'above 85% goal' };
       case 'at-risk':
-        return { color: 'var(--accent-yellow)', bg: 'rgba(250, 204, 21, 0.15)', label: '🟡 At Risk', goalText: 'below 85% goal' };
+        return { color: 'var(--accent-yellow)', bg: 'rgba(250, 204, 21, 0.15)', label: ' At Risk', goalText: 'below 85% goal' };
       case 'needs-attention':
-        return { color: 'var(--accent-red)', bg: 'rgba(239, 68, 68, 0.15)', label: '🔴 Needs Attention', goalText: 'critical threshold' };
+        return { color: 'var(--accent-red)', bg: 'rgba(239, 68, 68, 0.15)', label: ' Needs Attention', goalText: 'critical threshold' };
       default:
         return { color: 'var(--text-secondary)', bg: 'var(--bg-tertiary)', label: 'Unknown', goalText: '' };
     }
   };
 
   const ClubDrillDown = ({ club, onClose }) => (
-    <div 
+ <div 
       style={{
         position: 'fixed',
         inset: 0,
@@ -113,7 +113,7 @@ const Attendance = () => {
       }}
       onClick={onClose}
     >
-      <div 
+ <div 
         style={{
           background: 'var(--bg-secondary)',
           border: '1px solid var(--border-color)',
@@ -127,17 +127,17 @@ const Attendance = () => {
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '24px' }}>
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-              <span style={{ fontSize: '32px' }}>{club.icon}</span>
-              <h2 style={{ margin: 0 }}>{club.name}</h2>
-            </div>
-            <div style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)' }}>
-              {club.percentage}% attendance
-            </div>
-          </div>
-          <button 
+ <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '24px' }}>
+ <div>
+ <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+ <span style={{ fontSize: '32px' }}>{club.icon}</span>
+ <h2 style={{ margin: 0 }}>{club.name}</h2>
+ </div>
+ <div style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)' }}>
+             {club.percentage}% attendance
+ </div>
+ </div>
+ <button 
             onClick={onClose}
             style={{
               background: 'var(--bg-tertiary)',
@@ -153,15 +153,15 @@ const Attendance = () => {
               color: 'var(--text-secondary)'
             }}
           >
-            ✕
-          </button>
-        </div>
+ 
+         </button>
+ </div>
 
-        {/* Meeting History */}
-        <h3 style={{ fontSize: '16px', marginBottom: '16px', color: 'var(--text-secondary)' }}>Meeting History</h3>
-        <div style={{ marginBottom: '24px' }}>
-          {club.meetings.map((meeting, idx) => (
-            <div 
+       {/* Meeting History */}
+ <h3 style={{ fontSize: '16px', marginBottom: '16px', color: 'var(--text-secondary)' }}>Meeting History</h3>
+ <div style={{ marginBottom: '24px' }}>
+         {club.meetings.map((meeting, idx) => (
+ <div 
               key={idx}
               style={{
                 display: 'flex',
@@ -174,17 +174,17 @@ const Attendance = () => {
                 border: '1px solid var(--border-color)'
               }}
             >
-              <div>
-                <div style={{ fontWeight: 600, color: 'var(--text-primary)', marginBottom: '4px' }}>
-                  {meeting.date}
-                </div>
-                {meeting.excuse && (
-                  <div style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>
-                    Reason: {meeting.excuse}
-                  </div>
-                )}
-              </div>
-              <span style={{
+ <div>
+ <div style={{ fontWeight: 600, color: 'var(--text-primary)', marginBottom: '4px' }}>
+                 {meeting.date}
+ </div>
+               {meeting.excuse && (
+ <div style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>
+                   Reason: {meeting.excuse}
+ </div>
+               )}
+ </div>
+ <span style={{
                 padding: '4px 12px',
                 borderRadius: '12px',
                 fontSize: '13px',
@@ -200,15 +200,15 @@ const Attendance = () => {
                   ? 'var(--accent-yellow)'
                   : 'var(--accent-red)'
               }}>
-                {meeting.status === 'present' ? '✓ Present' : meeting.status === 'excused' ? '⚠ Excused' : '✗ Absent'}
-              </span>
-            </div>
-          ))}
-        </div>
+               {meeting.status === 'present' ? ' Present' : meeting.status === 'excused' ? ' Excused' : ' Absent'}
+ </span>
+ </div>
+         ))}
+ </div>
 
-        {/* Officer Notes */}
-        <h3 style={{ fontSize: '16px', marginBottom: '12px', color: 'var(--text-secondary)' }}>Officer Notes</h3>
-        <div style={{
+       {/* Officer Notes */}
+ <h3 style={{ fontSize: '16px', marginBottom: '12px', color: 'var(--text-secondary)' }}>Officer Notes</h3>
+ <div style={{
           padding: '12px 16px',
           background: 'var(--bg-tertiary)',
           borderRadius: '8px',
@@ -217,11 +217,11 @@ const Attendance = () => {
           color: 'var(--text-primary)',
           lineHeight: 1.6
         }}>
-          {club.notes}
-        </div>
+         {club.notes}
+ </div>
 
-        {/* Request Excused Absence */}
-        <button 
+       {/* Request Excused Absence */}
+ <button 
           onClick={() => alert('Absence request submitted to club officers')}
           style={{
             width: '100%',
@@ -235,21 +235,21 @@ const Attendance = () => {
             cursor: 'pointer'
           }}
         >
-          📝 Request Excused Absence
-        </button>
-      </div>
-    </div>
-  );
+          Request Excused Absence
+ </button>
+ </div>
+ </div>
+ );
 
   return (
-    <div className="dashboard">
-      <div className="dashboard-header">
-        <div className="dashboard-greeting">
-          <h1>Attendance</h1>
-          <span className="school-name">Smart engagement dashboard</span>
-        </div>
-        <div style={{ display: 'flex', gap: '8px' }}>
-          <button 
+ <div className="dashboard">
+ <div className="dashboard-header">
+ <div className="dashboard-greeting">
+ <h1>Attendance</h1>
+ <span className="school-name">Smart engagement dashboard</span>
+ </div>
+ <div style={{ display: 'flex', gap: '8px' }}>
+ <button 
             onClick={() => setView('student')}
             style={{
               padding: '10px 20px',
@@ -262,9 +262,9 @@ const Attendance = () => {
               fontWeight: 500,
               transition: 'all var(--transition-base)'
             }}>
-            Student View
-          </button>
-          <button 
+           Student View
+ </button>
+ <button 
             onClick={() => setView('officer')}
             style={{
               padding: '10px 20px',
@@ -277,23 +277,23 @@ const Attendance = () => {
               fontWeight: 500,
               transition: 'all var(--transition-base)'
             }}>
-            Officer View
-          </button>
-        </div>
-      </div>
+           Officer View
+ </button>
+ </div>
+ </div>
 
-      <section>
-        {view === 'student' && (
-          <>
-            {/* Overall Attendance with Trends */}
-            <div className="post-card" style={{ maxWidth: '800px', marginBottom: '24px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '12px' }}>
-                <h3>Overall Attendance</h3>
-                <div style={{ textAlign: 'right' }}>
-                  <div style={{ fontSize: '24px', fontWeight: 700, color: 'var(--text-primary)' }}>
-                    85%
-                  </div>
-                  <div style={{ 
+ <section>
+       {view === 'student' && (
+ <>
+           {/* Overall Attendance with Trends */}
+ <div className="post-card" style={{ maxWidth: '800px', marginBottom: '24px' }}>
+ <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '12px' }}>
+ <h3>Overall Attendance</h3>
+ <div style={{ textAlign: 'right' }}>
+ <div style={{ fontSize: '24px', fontWeight: 700, color: 'var(--text-primary)' }}>
+                   85%
+ </div>
+ <div style={{ 
                     fontSize: '13px', 
                     color: 'var(--accent-green)', 
                     fontWeight: 600,
@@ -301,11 +301,11 @@ const Attendance = () => {
                     alignItems: 'center',
                     gap: '4px'
                   }}>
-                    ↑ 5% from last month
-                  </div>
-                </div>
-              </div>
-              <div style={{ 
+                   ↑ 5% from last month
+ </div>
+ </div>
+ </div>
+ <div style={{ 
                 width: '100%', 
                 height: '16px', 
                 backgroundColor: 'var(--bg-tertiary)', 
@@ -313,50 +313,50 @@ const Attendance = () => {
                 overflow: 'hidden',
                 marginTop: '12px'
               }}>
-                <div style={{
+ <div style={{
                   width: '85%',
                   height: '100%',
                   background: 'var',
                   borderRadius: '8px',
                   transition: 'width 1s ease-out'
                 }}></div>
-              </div>
-              <p style={{ color: 'var(--text-secondary)', marginTop: '12px', fontSize: '14px', margin: 0 }}>
-                Attendance rate this semester
-              </p>
-            </div>
+ </div>
+ <p style={{ color: 'var(--text-secondary)', marginTop: '12px', fontSize: '14px', margin: 0 }}>
+               Attendance rate this semester
+ </p>
+ </div>
 
-            {/* Incentives & Badges */}
-            <div className="post-card" style={{ maxWidth: '800px', marginBottom: '24px', background: 'rgba(147, 51, 234, 0.1)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <div style={{ fontSize: '40px' }}>🎖️</div>
-                <div style={{ flex: 1 }}>
-                  <h4 style={{ margin: 0, marginBottom: '6px' }}>Attendance Achievements</h4>
-                  <div style={{ fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '8px' }}>
-                    Your participation score: <strong style={{ color: 'var(--text-primary)' }}>850 points</strong>
-                  </div>
-                  <div style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
-                    • Science Olympiad: 🎖️ Perfect Attendance<br/>
-                    • 2 more perfect months → unlock "Active Member" voting rights<br/>
-                    • 90%+ attendance → eligible for leadership roles
-                  </div>
-                </div>
-              </div>
-            </div>
+           {/* Incentives & Badges */}
+ <div className="post-card" style={{ maxWidth: '800px', marginBottom: '24px', background: 'rgba(147, 51, 234, 0.1)' }}>
+ <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+ <div style={{ fontSize: '40px' }}></div>
+ <div style={{ flex: 1 }}>
+ <h4 style={{ margin: 0, marginBottom: '6px' }}>Attendance Achievements</h4>
+ <div style={{ fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '8px' }}>
+                   Your participation score: <strong style={{ color: 'var(--text-primary)' }}>850 points</strong>
+ </div>
+ <div style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
+                   • Science Olympiad:  Perfect Attendance<br/>
+                   • 2 more perfect months → unlock "Active Member" voting rights<br/>
+                   • 90%+ attendance → eligible for leadership roles
+ </div>
+ </div>
+ </div>
+ </div>
 
-            <h2 className="section-title">Attendance by Club</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
-              {clubs.map((club) => {
+ <h2 className="section-title">Attendance by Club</h2>
+ <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
+             {clubs.map((club) => {
                 const statusInfo = getStatusInfo(club.status);
                 return (
-                  <div 
+ <div 
                     key={club.id} 
                     className="post-card"
                     onClick={() => setSelectedClub(club)}
                     style={{ cursor: 'pointer' }}
                   >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-                      <div style={{
+ <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+ <div style={{
                         fontSize: '32px',
                         width: '48px',
                         height: '48px',
@@ -364,25 +364,25 @@ const Attendance = () => {
                         alignItems: 'center',
                         justifyContent: 'center'
                       }}>
-                        {club.icon}
-                      </div>
-                      <div style={{ flex: 1 }}>
-                        <h3 style={{ margin: 0, fontSize: '16px', marginBottom: '4px' }}>{club.name}</h3>
-                        <div style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>
-                          {club.attended} / {club.total} meetings
-                        </div>
-                      </div>
-                      {club.hasBadge && (
-                        <div style={{
+                       {club.icon}
+ </div>
+ <div style={{ flex: 1 }}>
+ <h3 style={{ margin: 0, fontSize: '16px', marginBottom: '4px' }}>{club.name}</h3>
+ <div style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>
+                         {club.attended} / {club.total} meetings
+ </div>
+ </div>
+                     {club.hasBadge && (
+ <div style={{
                           fontSize: '24px'
                         }}>
-                          🎖️
-                        </div>
-                      )}
-                    </div>
+ 
+                       </div>
+                     )}
+ </div>
 
-                    {/* Progress Bar */}
-                    <div style={{ 
+                   {/* Progress Bar */}
+ <div style={{ 
                       width: '100%', 
                       height: '10px', 
                       backgroundColor: 'var(--bg-tertiary)', 
@@ -390,7 +390,7 @@ const Attendance = () => {
                       overflow: 'hidden',
                       marginBottom: '12px'
                     }}>
-                      <div style={{
+ <div style={{
                         width: `${club.percentage}%`,
                         height: '100%',
                         background: club.percentage >= 85 
@@ -400,14 +400,14 @@ const Attendance = () => {
                           : 'var',
                         transition: 'width 0.8s ease-out'
                       }}></div>
-                    </div>
+ </div>
 
-                    {/* Status & Percentage */}
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                      <div style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)' }}>
-                        {club.percentage}%
-                      </div>
-                      <div style={{
+                   {/* Status & Percentage */}
+ <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+ <div style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)' }}>
+                       {club.percentage}%
+ </div>
+ <div style={{
                         padding: '4px 10px',
                         borderRadius: '12px',
                         fontSize: '12px',
@@ -415,12 +415,12 @@ const Attendance = () => {
                         background: statusInfo.bg,
                         color: statusInfo.color
                       }}>
-                        {statusInfo.label}
-                      </div>
-                    </div>
+                       {statusInfo.label}
+ </div>
+ </div>
 
-                    {/* Trend & Context */}
-                    <div style={{ 
+                   {/* Trend & Context */}
+ <div style={{ 
                       fontSize: '13px', 
                       color: 'var(--text-secondary)',
                       display: 'flex',
@@ -429,39 +429,39 @@ const Attendance = () => {
                       paddingTop: '12px',
                       borderTop: '1px solid var(--border-color)'
                     }}>
-                      <span>
-                        {club.status !== 'on-track' && `${statusInfo.goalText}`}
+ <span>
+                       {club.status !== 'on-track' && `${statusInfo.goalText}`}
                         {club.status === 'on-track' && 'Excellent participation!'}
-                      </span>
-                      <span style={{ 
+ </span>
+ <span style={{ 
                         color: club.trend > 0 ? 'var(--accent-green)' : 'var(--accent-red)',
                         fontWeight: 600
                       }}>
-                        {club.trend > 0 ? '↑' : '↓'} {Math.abs(club.trend)}%
-                      </span>
-                    </div>
+                       {club.trend > 0 ? '↑' : '↓'} {Math.abs(club.trend)}%
+ </span>
+ </div>
 
-                    <div style={{ 
+ <div style={{ 
                       fontSize: '12px', 
                       color: 'var(--accent-primary)',
                       marginTop: '8px',
                       textAlign: 'center',
                       fontWeight: 500
                     }}>
-                      Tap for details →
-                    </div>
-                  </div>
-                );
+                     Tap for details →
+ </div>
+ </div>
+               );
               })}
-            </div>
-          </>
-        )}
+ </div>
+ </>
+       )}
 
         {view === 'officer' && (
-          <>
-            {/* Officer Tools */}
-            <div style={{ marginBottom: '24px', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <button 
+ <>
+           {/* Officer Tools */}
+ <div style={{ marginBottom: '24px', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+ <button 
                 onClick={() => setShowQRCode(!showQRCode)}
                 style={{
                   padding: '12px 20px',
@@ -476,9 +476,9 @@ const Attendance = () => {
                   alignItems: 'center',
                   gap: '8px'
                 }}>
-                📱 QR Code Check-In
-              </button>
-              <button 
+                QR Code Check-In
+ </button>
+ <button 
                 onClick={() => alert('Marking all as present...')}
                 style={{
                   padding: '12px 20px',
@@ -490,9 +490,9 @@ const Attendance = () => {
                   fontSize: '14px',
                   fontWeight: 600
                 }}>
-                ✓ Bulk Mark Present
-              </button>
-              <button style={{
+                Bulk Mark Present
+ </button>
+ <button style={{
                 padding: '12px 20px',
                 background: 'var(--bg-secondary)',
                 border: '1px solid var(--border-color)',
@@ -502,9 +502,9 @@ const Attendance = () => {
                 fontSize: '14px',
                 fontWeight: 500
               }}>
-                📊 Export CSV
-              </button>
-              <button style={{
+                Export CSV
+ </button>
+ <button style={{
                 padding: '12px 20px',
                 background: 'var(--bg-secondary)',
                 border: '1px solid var(--border-color)',
@@ -514,15 +514,15 @@ const Attendance = () => {
                 fontSize: '14px',
                 fontWeight: 500
               }}>
-                📄 Export PDF
-              </button>
-            </div>
+                Export PDF
+ </button>
+ </div>
 
-            {/* QR Code Display */}
+           {/* QR Code Display */}
             {showQRCode && (
-              <div className="post-card" style={{ maxWidth: '400px', marginBottom: '24px', textAlign: 'center' }}>
-                <h3 style={{ marginBottom: '16px' }}>Meeting Check-In</h3>
-                <div style={{
+ <div className="post-card" style={{ maxWidth: '400px', marginBottom: '24px', textAlign: 'center' }}>
+ <h3 style={{ marginBottom: '16px' }}>Meeting Check-In</h3>
+ <div style={{
                   width: '200px',
                   height: '200px',
                   margin: '0 auto',
@@ -533,46 +533,46 @@ const Attendance = () => {
                   justifyContent: 'center',
                   fontSize: '100px'
                 }}>
-                  📱
-                </div>
-                <p style={{ marginTop: '16px', color: 'var(--text-secondary)', fontSize: '14px' }}>
-                  Students scan this code to check in
-                </p>
-              </div>
-            )}
+ 
+               </div>
+ <p style={{ marginTop: '16px', color: 'var(--text-secondary)', fontSize: '14px' }}>
+                 Students scan this code to check in
+ </p>
+ </div>
+           )}
 
             {/* Student Table */}
-            <div className="post-card" style={{ maxWidth: 'none' }}>
-              <h3 style={{ marginBottom: '16px' }}>Tech Club - Today's Meeting</h3>
-              <div style={{ overflowX: 'auto' }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                  <thead>
-                    <tr style={{ borderBottom: '2px solid var(--border-color)' }}>
-                      <th style={{ textAlign: 'left', padding: '12px', color: 'var(--text-secondary)', fontSize: '14px', fontWeight: 600 }}>Student</th>
-                      <th style={{ textAlign: 'left', padding: '12px', color: 'var(--text-secondary)', fontSize: '14px', fontWeight: 600 }}>Status</th>
-                      <th style={{ textAlign: 'center', padding: '12px', color: 'var(--text-secondary)', fontSize: '14px', fontWeight: 600 }}>Overall</th>
-                      <th style={{ textAlign: 'left', padding: '12px', color: 'var(--text-secondary)', fontSize: '14px', fontWeight: 600 }}>Notes</th>
-                      <th style={{ textAlign: 'left', padding: '12px', color: 'var(--text-secondary)', fontSize: '14px', fontWeight: 600 }}>Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {students.map((student) => (
-                      <tr key={student.id} style={{ borderBottom: '1px solid var(--border-color)' }}>
-                        <td style={{ padding: '12px' }}>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                            <span style={{ color: 'var(--text-primary)', fontWeight: 500 }}>{student.name}</span>
-                            {student.flag && (
-                              <span style={{ 
+ <div className="post-card" style={{ maxWidth: 'none' }}>
+ <h3 style={{ marginBottom: '16px' }}>Tech Club - Today's Meeting</h3>
+ <div style={{ overflowX: 'auto' }}>
+ <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+ <thead>
+ <tr style={{ borderBottom: '2px solid var(--border-color)' }}>
+ <th style={{ textAlign: 'left', padding: '12px', color: 'var(--text-secondary)', fontSize: '14px', fontWeight: 600 }}>Student</th>
+ <th style={{ textAlign: 'left', padding: '12px', color: 'var(--text-secondary)', fontSize: '14px', fontWeight: 600 }}>Status</th>
+ <th style={{ textAlign: 'center', padding: '12px', color: 'var(--text-secondary)', fontSize: '14px', fontWeight: 600 }}>Overall</th>
+ <th style={{ textAlign: 'left', padding: '12px', color: 'var(--text-secondary)', fontSize: '14px', fontWeight: 600 }}>Notes</th>
+ <th style={{ textAlign: 'left', padding: '12px', color: 'var(--text-secondary)', fontSize: '14px', fontWeight: 600 }}>Actions</th>
+ </tr>
+ </thead>
+ <tbody>
+                   {students.map((student) => (
+ <tr key={student.id} style={{ borderBottom: '1px solid var(--border-color)' }}>
+ <td style={{ padding: '12px' }}>
+ <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+ <span style={{ color: 'var(--text-primary)', fontWeight: 500 }}>{student.name}</span>
+                           {student.flag && (
+ <span style={{ 
                                 fontSize: '16px',
                                 title: 'Chronic absence flagged'
                               }}>
-                                🚩
-                              </span>
-                            )}
-                          </div>
-                        </td>
-                        <td style={{ padding: '12px' }}>
-                          <span style={{
+ 
+                             </span>
+                           )}
+ </div>
+ </td>
+ <td style={{ padding: '12px' }}>
+ <span style={{
                             padding: '4px 10px',
                             borderRadius: '12px',
                             fontSize: '13px',
@@ -588,11 +588,11 @@ const Attendance = () => {
                               ? 'var(--accent-yellow)'
                               : 'var(--accent-red)'
                           }}>
-                            {student.status === 'present' ? '✓ Present' : student.status === 'excused' ? '⚠ Excused' : '✗ Absent'}
-                          </span>
-                        </td>
-                        <td style={{ padding: '12px', textAlign: 'center' }}>
-                          <div style={{ 
+                           {student.status === 'present' ? ' Present' : student.status === 'excused' ? ' Excused' : ' Absent'}
+ </span>
+ </td>
+ <td style={{ padding: '12px', textAlign: 'center' }}>
+ <div style={{ 
                             fontWeight: 600,
                             color: student.attendance >= 85 
                               ? 'var(--accent-green)' 
@@ -600,15 +600,15 @@ const Attendance = () => {
                               ? 'var(--accent-yellow)'
                               : 'var(--accent-red)'
                           }}>
-                            {student.attendance}%
-                          </div>
-                        </td>
-                        <td style={{ padding: '12px', color: 'var(--text-secondary)', fontSize: '14px' }}>
-                          {student.reason || '—'}
-                        </td>
-                        <td style={{ padding: '12px' }}>
-                          <div style={{ display: 'flex', gap: '8px' }}>
-                            <button style={{
+                           {student.attendance}%
+ </div>
+ </td>
+ <td style={{ padding: '12px', color: 'var(--text-secondary)', fontSize: '14px' }}>
+                         {student.reason || '—'}
+ </td>
+ <td style={{ padding: '12px' }}>
+ <div style={{ display: 'flex', gap: '8px' }}>
+ <button style={{
                               padding: '6px 12px',
                               background: 'var(--bg-tertiary)',
                               border: '1px solid var(--border-color)',
@@ -618,10 +618,10 @@ const Attendance = () => {
                               fontSize: '13px',
                               fontWeight: 500
                             }}>
-                              Edit
-                            </button>
-                            {student.flag && (
-                              <button 
+                             Edit
+ </button>
+                           {student.flag && (
+ <button 
                                 onClick={() => alert(`Flagged ${student.name} for chronic absence`)}
                                 style={{
                                   padding: '6px 12px',
@@ -633,30 +633,30 @@ const Attendance = () => {
                                   fontSize: '13px',
                                   fontWeight: 600
                                 }}>
-                                🚩 Flagged
-                              </button>
-                            )}
-                          </div>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </>
-        )}
-      </section>
+                                Flagged
+ </button>
+                           )}
+ </div>
+ </td>
+ </tr>
+                   ))}
+ </tbody>
+ </table>
+ </div>
+ </div>
+ </>
+       )}
+ </section>
 
-      {/* Club Drill-Down Modal */}
+     {/* Club Drill-Down Modal */}
       {selectedClub && (
-        <ClubDrillDown 
+ <ClubDrillDown 
           club={selectedClub} 
           onClose={() => setSelectedClub(null)} 
         />
-      )}
-    </div>
-  );
+     )}
+ </div>
+ );
 };
 
 export default Attendance;

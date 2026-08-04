@@ -32,25 +32,25 @@ export default function AccessibilityChatbot(){
   };
 
   return (
-    <div className={"a11y-chatbot " + (open ? 'open' : '')}>
-      <button className="a11y-toggle" onClick={() => setOpen(o => !o)} aria-label="Accessibility assistant">🦾</button>
-      {open && (
-        <div className="a11y-panel">
-          <div className="a11y-header">Accessibility Assistant</div>
-          <div className="a11y-body">
-            <p style={{ marginTop: 0 }}>Toggle accessibility helpers for better reading and navigation.</p>
-            {OPTIONS.map(opt => (
-              <label key={opt.id} className="a11y-option">
-                <input type="checkbox" checked={!!settings[opt.id]} onChange={() => toggle(opt.id)} />
-                <span>{opt.label}</span>
-              </label>
-            ))}
-          </div>
-          <div className="a11y-footer">
-            <button onClick={() => { setSettings({}); localStorage.removeItem('a11y_settings'); applySettings(); }} className="a11y-reset">Reset</button>
-          </div>
-        </div>
-      )}
-    </div>
-  );
+ <div className={"a11y-chatbot " + (open ? 'open' : '')}>
+ <button className="a11y-toggle" onClick={() => setOpen(o => !o)} aria-label="Accessibility assistant"></button>
+     {open && (
+ <div className="a11y-panel">
+ <div className="a11y-header">Accessibility Assistant</div>
+ <div className="a11y-body">
+ <p style={{ marginTop: 0 }}>Toggle accessibility helpers for better reading and navigation.</p>
+           {OPTIONS.map(opt => (
+ <label key={opt.id} className="a11y-option">
+ <input type="checkbox" checked={!!settings[opt.id]} onChange={() => toggle(opt.id)} />
+ <span>{opt.label}</span>
+ </label>
+           ))}
+ </div>
+ <div className="a11y-footer">
+ <button onClick={() => { setSettings({}); localStorage.removeItem('a11y_settings'); applySettings(); }} className="a11y-reset">Reset</button>
+ </div>
+ </div>
+     )}
+ </div>
+ );
 }

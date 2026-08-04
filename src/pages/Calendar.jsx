@@ -119,7 +119,7 @@ const Calendar = () => {
     const isToday = event.date === 'Today';
     
     return (
-      <div 
+ <div 
         style={{ 
           position: 'relative',
           background: 'var(--bg-secondary)',
@@ -144,8 +144,8 @@ const Calendar = () => {
         }}
         onClick={() => setSelectedEvent(event)}
       >
-        {/* Left Color Bar */}
-        <div style={{
+       {/* Left Color Bar */}
+ <div style={{
           position: 'absolute',
           left: 0,
           top: 0,
@@ -155,8 +155,8 @@ const Calendar = () => {
           borderRadius: '12px 0 0 12px'
         }} />
 
-        {/* Event Type + Club */}
-        <div style={{ 
+       {/* Event Type + Club */}
+ <div style={{ 
           fontSize: '11px', 
           fontWeight: 700, 
           color: eventType.color,
@@ -164,22 +164,22 @@ const Calendar = () => {
           textTransform: 'uppercase',
           letterSpacing: '0.8px'
         }}>
-          {eventType.label} • {event.club}
-        </div>
+         {eventType.label} • {event.club}
+ </div>
 
-        {/* Title */}
-        <h3 style={{ 
+       {/* Title */}
+ <h3 style={{ 
           margin: 0, 
           marginBottom: '12px', 
           fontSize: '18px',
           fontWeight: 600,
           color: 'var(--text-primary)'
         }}>
-          {event.title}
-        </h3>
+         {event.title}
+ </h3>
 
-        {/* Meta Info */}
-        <div style={{ 
+       {/* Meta Info */}
+ <div style={{ 
           display: 'grid',
           gridTemplateColumns: 'auto auto',
           gap: '8px',
@@ -187,19 +187,19 @@ const Calendar = () => {
           fontSize: '14px',
           color: '#94A3B8'
         }}>
-          <div>📅 {event.date}</div>
-          <div>⏰ {event.time}</div>
-          <div>📍 {event.location}</div>
-          <div>👥 {event.attendees} attending</div>
-        </div>
+ <div> {event.date}</div>
+ <div>⏰ {event.time}</div>
+ <div> {event.location}</div>
+ <div> {event.attendees} attending</div>
+ </div>
 
-        {/* RSVP Buttons */}
-        <div style={{ 
+       {/* RSVP Buttons */}
+ <div style={{ 
           display: 'flex', 
           gap: '8px', 
           marginBottom: '12px'
         }}>
-          <button 
+ <button 
             onClick={(e) => {
               e.stopPropagation();
               handleRSVP(event.id, 'going');
@@ -221,9 +221,9 @@ const Calendar = () => {
               gap: '6px'
             }}
           >
-            {currentRsvp === 'going' && '✓'} Going
-          </button>
-          <button 
+           {currentRsvp === 'going' && ''} Going
+ </button>
+ <button 
             onClick={(e) => {
               e.stopPropagation();
               handleRSVP(event.id, 'maybe');
@@ -245,9 +245,9 @@ const Calendar = () => {
               gap: '6px'
             }}
           >
-            {currentRsvp === 'maybe' && '✓'} Maybe
-          </button>
-          <button 
+           {currentRsvp === 'maybe' && ''} Maybe
+ </button>
+ <button 
             onClick={(e) => {
               e.stopPropagation();
               handleRSVP(event.id, 'not-going');
@@ -269,19 +269,19 @@ const Calendar = () => {
               gap: '6px'
             }}
           >
-            {currentRsvp === 'not-going' && '✓'} Not Going
-          </button>
-        </div>
+           {currentRsvp === 'not-going' && ''} Not Going
+ </button>
+ </div>
 
-        {/* Secondary Actions */}
-        <div style={{ 
+       {/* Secondary Actions */}
+ <div style={{ 
           display: 'flex', 
           gap: '16px',
           fontSize: '13px',
           color: '#3B82F6',
           fontWeight: 500
         }}>
-          <button 
+ <button 
             onClick={(e) => {
               e.stopPropagation();
               alert('Added to your calendar');
@@ -296,9 +296,9 @@ const Calendar = () => {
               padding: 0
             }}
           >
-            Add to Calendar →
-          </button>
-          <button 
+           Add to Calendar →
+ </button>
+ <button 
             onClick={(e) => {
               e.stopPropagation();
               setSelectedEvent(event);
@@ -313,17 +313,17 @@ const Calendar = () => {
               padding: 0
             }}
           >
-            Details →
-          </button>
-        </div>
-      </div>
-    );
+           Details →
+ </button>
+ </div>
+ </div>
+   );
   };
 
   return (
-    <div className="dashboard">
-      {/* Sticky Header */}
-      <div className="dashboard-header" style={{ 
+ <div className="dashboard">
+     {/* Sticky Header */}
+ <div className="dashboard-header" style={{ 
         position: 'sticky', 
         top: 0, 
         background: 'var(--bg-primary)',
@@ -331,20 +331,20 @@ const Calendar = () => {
         paddingBottom: '16px',
         borderBottom: '1px solid var(--border-color)'
       }}>
-        <div className="dashboard-greeting">
-          <h1 style={{ fontSize: '28px', fontWeight: 700 }}>Calendar</h1>
-          <span className="school-name">Your command center for student life</span>
-        </div>
-        <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
-          {/* View Switcher */}
-          <div style={{ 
+ <div className="dashboard-greeting">
+ <h1 style={{ fontSize: '28px', fontWeight: 700 }}>Calendar</h1>
+ <span className="school-name">Your command center for student life</span>
+ </div>
+ <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
+         {/* View Switcher */}
+ <div style={{ 
             display: 'flex',
             background: 'var(--bg-secondary)',
             border: '1px solid var(--border-color)',
             borderRadius: '8px',
             padding: '4px'
           }}>
-            <button 
+ <button 
               onClick={() => setView('month')}
               style={{
                 padding: '6px 14px',
@@ -357,9 +357,9 @@ const Calendar = () => {
                 fontWeight: 600,
                 transition: 'all 0.2s ease'
               }}>
-              Month
-            </button>
-            <button 
+             Month
+ </button>
+ <button 
               onClick={() => setView('week')}
               style={{
                 padding: '6px 14px',
@@ -372,9 +372,9 @@ const Calendar = () => {
                 fontWeight: 600,
                 transition: 'all 0.2s ease'
               }}>
-              Week
-            </button>
-            <button 
+             Week
+ </button>
+ <button 
               onClick={() => setView('agenda')}
               style={{
                 padding: '6px 14px',
@@ -387,13 +387,13 @@ const Calendar = () => {
                 fontWeight: 600,
                 transition: 'all 0.2s ease'
               }}>
-              Agenda
-            </button>
-          </div>
+             Agenda
+ </button>
+ </div>
 
-          {/* Search Bar */}
-          <div style={{ position: 'relative', flex: 1, minWidth: '200px', maxWidth: '300px' }}>
-            <input 
+         {/* Search Bar */}
+ <div style={{ position: 'relative', flex: 1, minWidth: '200px', maxWidth: '300px' }}>
+ <input 
               type="text" 
               placeholder="Search events..." 
               style={{
@@ -406,17 +406,17 @@ const Calendar = () => {
                 fontSize: '14px'
               }}
             />
-            <span style={{
+ <span style={{
               position: 'absolute',
               left: '12px',
               top: '50%',
               transform: 'translateY(-50%)',
               fontSize: '16px'
-            }}>🔍</span>
-          </div>
+            }}></span>
+ </div>
 
-          {/* Filters Icon */}
-          <button 
+         {/* Filters Icon */}
+ <button 
             onClick={() => setShowFilters(!showFilters)}
             style={{
               padding: '8px 12px',
@@ -430,23 +430,23 @@ const Calendar = () => {
               alignItems: 'center',
               gap: '6px'
             }}>
-            ⚙️ Filters
-          </button>
-        </div>
-      </div>
+            Filters
+ </button>
+ </div>
+ </div>
 
-      <section>
-        {/* Smart Filters Row */}
-        <div style={{ marginBottom: '20px' }}>
-          {/* Main Toggle */}
-          <div style={{ 
+ <section>
+       {/* Smart Filters Row */}
+ <div style={{ marginBottom: '20px' }}>
+         {/* Main Toggle */}
+ <div style={{ 
             display: 'inline-flex',
             background: 'var(--bg-secondary)',
             border: '1px solid var(--border-color)',
             borderRadius: '24px',
             padding: '4px'
           }}>
-            <button
+ <button
               onClick={() => setFilter('all')}
               style={{
                 padding: '8px 20px',
@@ -460,9 +460,9 @@ const Calendar = () => {
                 transition: 'all 0.2s ease'
               }}
             >
-              ◉ All Club Events
-            </button>
-            <button
+             ◉ All Club Events
+ </button>
+ <button
               onClick={() => setFilter('my')}
               style={{
                 padding: '8px 20px',
@@ -476,13 +476,13 @@ const Calendar = () => {
                 transition: 'all 0.2s ease'
               }}
             >
-              ○ My RSVP'd Only
-            </button>
-          </div>
+             ○ My RSVP'd Only
+ </button>
+ </div>
 
-          {/* Advanced Filters (Collapsed by default) */}
+         {/* Advanced Filters (Collapsed by default) */}
           {showFilters && (
-            <div style={{
+ <div style={{
               marginTop: '12px',
               padding: '16px',
               background: 'var(--bg-secondary)',
@@ -494,10 +494,10 @@ const Calendar = () => {
               alignItems: 'center',
               animation: 'fadeIn 0.2s ease'
             }}>
-              <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-secondary)' }}>
-                Filter by:
-              </div>
-              <select style={{
+ <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-secondary)' }}>
+               Filter by:
+ </div>
+ <select style={{
                 padding: '6px 12px',
                 background: 'var(--bg-tertiary)',
                 border: '1px solid var(--border-color)',
@@ -505,12 +505,12 @@ const Calendar = () => {
                 color: 'var(--text-primary)',
                 fontSize: '13px'
               }}>
-                <option>All Clubs</option>
-                <option>Tech Club</option>
-                <option>Art Club</option>
-                <option>Debate Team</option>
-              </select>
-              <select style={{
+ <option>All Clubs</option>
+ <option>Tech Club</option>
+ <option>Art Club</option>
+ <option>Debate Team</option>
+ </select>
+ <select style={{
                 padding: '6px 12px',
                 background: 'var(--bg-tertiary)',
                 border: '1px solid var(--border-color)',
@@ -518,14 +518,14 @@ const Calendar = () => {
                 color: 'var(--text-primary)',
                 fontSize: '13px'
               }}>
-                <option>All Types</option>
-                <option>🔴 Mandatory</option>
-                <option>🟣 Workshop</option>
-                <option>🟢 Social</option>
-                <option>🔵 Meeting</option>
-                <option>🟠 Competition</option>
-              </select>
-              <label style={{ 
+ <option>All Types</option>
+ <option> Mandatory</option>
+ <option> Workshop</option>
+ <option> Social</option>
+ <option> Meeting</option>
+ <option> Competition</option>
+ </select>
+ <label style={{ 
                 display: 'flex', 
                 alignItems: 'center', 
                 gap: '8px',
@@ -533,16 +533,16 @@ const Calendar = () => {
                 color: 'var(--text-primary)',
                 cursor: 'pointer'
               }}>
-                <input type="checkbox" />
-                Mandatory only
-              </label>
-            </div>
-          )}
-        </div>
+ <input type="checkbox" />
+               Mandatory only
+ </label>
+ </div>
+         )}
+ </div>
 
-        {/* Calendar Sync Card */}
+       {/* Calendar Sync Card */}
         {!calendarSynced && (
-          <div style={{
+ <div style={{
             marginBottom: '24px',
             padding: '20px',
             background: 'var(--bg-secondary)',
@@ -554,8 +554,8 @@ const Calendar = () => {
             flexWrap: 'wrap',
             gap: '16px'
           }}>
-            <div>
-              <h3 style={{ 
+ <div>
+ <h3 style={{ 
                 margin: 0, 
                 marginBottom: '6px',
                 fontSize: '16px',
@@ -564,14 +564,14 @@ const Calendar = () => {
                 alignItems: 'center',
                 gap: '8px'
               }}>
-                📲 Auto-Sync Calendar
-              </h3>
-              <p style={{ color: '#94A3B8', margin: 0, fontSize: '14px' }}>
-                One-tap sync. All future events auto-update.
-              </p>
-            </div>
-            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <button 
+                Auto-Sync Calendar
+ </h3>
+ <p style={{ color: '#94A3B8', margin: 0, fontSize: '14px' }}>
+               One-tap sync. All future events auto-update.
+ </p>
+ </div>
+ <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+ <button 
                 onClick={() => setCalendarSynced(true)}
                 style={{
                   padding: '10px 20px',
@@ -583,9 +583,9 @@ const Calendar = () => {
                   fontSize: '14px',
                   fontWeight: 600
                 }}>
-                ✓ Google Connected
-              </button>
-              <button style={{
+                Google Connected
+ </button>
+ <button style={{
                 padding: '10px 20px',
                 background: 'var(--bg-tertiary)',
                 border: '1px solid var(--border-color)',
@@ -595,15 +595,15 @@ const Calendar = () => {
                 fontSize: '14px',
                 fontWeight: 500
               }}>
-                🍎 Add Apple Calendar
-              </button>
-            </div>
-          </div>
-        )}
+                Add Apple Calendar
+ </button>
+ </div>
+ </div>
+       )}
 
         {/* Synced Status Chip */}
         {calendarSynced && (
-          <div style={{
+ <div style={{
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',
@@ -616,19 +616,19 @@ const Calendar = () => {
             fontWeight: 600,
             color: '#10B981'
           }}>
-            ✓ Calendar Synced
-          </div>
-        )}
+            Calendar Synced
+ </div>
+       )}
 
 
         {/* Event Timeline */}
         {view === 'agenda' && (() => {
           const grouped = groupEventsByDate(filteredEvents);
           return (
-            <>
-              {grouped.today.length > 0 && (
-                <>
-                  <h2 style={{ 
+ <>
+             {grouped.today.length > 0 && (
+ <>
+ <h2 style={{ 
                     fontSize: '11px',
                     fontWeight: 700,
                     textTransform: 'uppercase',
@@ -637,15 +637,15 @@ const Calendar = () => {
                     marginBottom: '16px',
                     marginTop: '24px'
                   }}>
-                    TODAY
-                  </h2>
-                  {grouped.today.map(event => <EventCard key={event.id} event={event} />)}
-                </>
-              )}
+                   TODAY
+ </h2>
+                 {grouped.today.map(event =><EventCard key={event.id} event={event} />)}
+ </>
+             )}
               
               {grouped.thisWeek.length > 0 && (
-                <>
-                  <h2 style={{ 
+ <>
+ <h2 style={{ 
                     fontSize: '11px',
                     fontWeight: 700,
                     textTransform: 'uppercase',
@@ -654,57 +654,57 @@ const Calendar = () => {
                     marginBottom: '16px',
                     marginTop: grouped.today.length > 0 ? '32px' : '24px'
                   }}>
-                    THIS WEEK
-                  </h2>
-                  {grouped.thisWeek.map(event => <EventCard key={event.id} event={event} />)}
-                </>
-              )}
+                   THIS WEEK
+ </h2>
+                 {grouped.thisWeek.map(event =><EventCard key={event.id} event={event} />)}
+ </>
+             )}
 
               {grouped.today.length === 0 && grouped.thisWeek.length === 0 && (
-                <div style={{
+ <div style={{
                   textAlign: 'center',
                   padding: '60px 20px',
                   color: '#64748B'
                 }}>
-                  <div style={{ fontSize: '48px', marginBottom: '16px' }}>📅</div>
-                  <div style={{ fontSize: '16px', fontWeight: 600 }}>No events found</div>
-                  <div style={{ fontSize: '14px', marginTop: '8px' }}>
-                    {filter === 'my' ? 'Try changing your filter' : 'Check back later for updates'}
-                  </div>
-                </div>
-              )}
-            </>
-          );
+ <div style={{ fontSize: '48px', marginBottom: '16px' }}></div>
+ <div style={{ fontSize: '16px', fontWeight: 600 }}>No events found</div>
+ <div style={{ fontSize: '14px', marginTop: '8px' }}>
+                   {filter === 'my' ? 'Try changing your filter' : 'Check back later for updates'}
+ </div>
+ </div>
+             )}
+ </>
+         );
         })()}
 
         {view === 'month' && (
-          <div className="post-card" style={{ maxWidth: 'none', textAlign: 'center', padding: '40px' }}>
-            <div style={{ fontSize: '48px', marginBottom: '16px' }}>📅</div>
-            <h3>Month View</h3>
-            <p style={{ color: 'var(--text-secondary)' }}>
-              Calendar grid with dot indicators under dates.<br/>
-              Tap dates to expand day drawer.
-            </p>
-          </div>
-        )}
+ <div className="post-card" style={{ maxWidth: 'none', textAlign: 'center', padding: '40px' }}>
+ <div style={{ fontSize: '48px', marginBottom: '16px' }}></div>
+ <h3>Month View</h3>
+ <p style={{ color: 'var(--text-secondary)' }}>
+             Calendar grid with dot indicators under dates.<br/>
+             Tap dates to expand day drawer.
+ </p>
+ </div>
+       )}
 
         {view === 'week' && (
-          <div className="post-card" style={{ maxWidth: 'none', textAlign: 'center', padding: '40px' }}>
-            <div style={{ fontSize: '48px', marginBottom: '16px' }}>📊</div>
-            <h3>Week Timeline View</h3>
-            <p style={{ color: 'var(--text-secondary)' }}>
-              Timeline layout like Google Calendar.<br/>
-              Drag to block time. Automatic conflict warnings.
-            </p>
-          </div>
-        )}
-      </section>
+ <div className="post-card" style={{ maxWidth: 'none', textAlign: 'center', padding: '40px' }}>
+ <div style={{ fontSize: '48px', marginBottom: '16px' }}></div>
+ <h3>Week Timeline View</h3>
+ <p style={{ color: 'var(--text-secondary)' }}>
+             Timeline layout like Google Calendar.<br/>
+             Drag to block time. Automatic conflict warnings.
+ </p>
+ </div>
+       )}
+ </section>
 
-      {/* Event Detail Modal */}
+     {/* Event Detail Modal */}
       {selectedEvent && (
-        <>
-          {/* Backdrop */}
-          <div 
+ <>
+         {/* Backdrop */}
+ <div 
             onClick={() => setSelectedEvent(null)}
             style={{
               position: 'fixed',
@@ -715,8 +715,8 @@ const Calendar = () => {
             }}
           />
 
-          {/* Modal */}
-          <div 
+         {/* Modal */}
+ <div 
             style={{
               position: 'fixed',
               bottom: 0,
@@ -732,17 +732,17 @@ const Calendar = () => {
               animation: 'slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
             }}
           >
-            <style>{`
+ <style>{`
               @keyframes slideUp {
                 from { transform: translateY(100%); opacity: 0; }
                 to { transform: translateY(0); opacity: 1; }
               }
             `}</style>
             
-            {/* Header */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '24px' }}>
-              <div style={{ flex: 1 }}>
-                <div style={{ 
+           {/* Header */}
+ <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '24px' }}>
+ <div style={{ flex: 1 }}>
+ <div style={{ 
                   fontSize: '11px', 
                   fontWeight: 700, 
                   color: eventTypes[selectedEvent.type].color,
@@ -750,11 +750,11 @@ const Calendar = () => {
                   textTransform: 'uppercase',
                   letterSpacing: '0.8px'
                 }}>
-                  {eventTypes[selectedEvent.type].label} • {selectedEvent.club}
-                </div>
-                <h2 style={{ margin: 0, fontSize: '22px', fontWeight: 700 }}>{selectedEvent.title}</h2>
-              </div>
-              <button 
+                 {eventTypes[selectedEvent.type].label} • {selectedEvent.club}
+ </div>
+ <h2 style={{ margin: 0, fontSize: '22px', fontWeight: 700 }}>{selectedEvent.title}</h2>
+ </div>
+ <button 
                 onClick={() => setSelectedEvent(null)}
                 style={{
                   background: 'var(--bg-tertiary)',
@@ -771,55 +771,55 @@ const Calendar = () => {
                   flexShrink: 0
                 }}
               >
-                ✕
-              </button>
-            </div>
+ 
+             </button>
+ </div>
 
-            {/* Event Details */}
-            <div style={{ 
+           {/* Event Details */}
+ <div style={{ 
               display: 'grid',
               gap: '12px',
               marginBottom: '24px',
               fontSize: '15px',
               color: 'var(--text-primary)'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <span style={{ fontSize: '18px' }}>📅</span>
-                <span>{selectedEvent.date}</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <span style={{ fontSize: '18px' }}>⏰</span>
-                <span>{selectedEvent.time}</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <span style={{ fontSize: '18px' }}>📍</span>
-                <span>{selectedEvent.location}</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <span style={{ fontSize: '18px' }}>👥</span>
-                <span>{selectedEvent.attendees} attending</span>
-              </div>
-            </div>
+ <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+ <span style={{ fontSize: '18px' }}></span>
+ <span>{selectedEvent.date}</span>
+ </div>
+ <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+ <span style={{ fontSize: '18px' }}>⏰</span>
+ <span>{selectedEvent.time}</span>
+ </div>
+ <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+ <span style={{ fontSize: '18px' }}></span>
+ <span>{selectedEvent.location}</span>
+ </div>
+ <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+ <span style={{ fontSize: '18px' }}></span>
+ <span>{selectedEvent.attendees} attending</span>
+ </div>
+ </div>
 
-            {/* Description */}
-            <div style={{ 
+           {/* Description */}
+ <div style={{ 
               padding: '16px', 
               background: 'var(--bg-tertiary)', 
               borderRadius: '12px',
               marginBottom: '20px'
             }}>
-              <h4 style={{ margin: 0, marginBottom: '8px', fontSize: '14px', fontWeight: 600 }}>Description</h4>
-              <p style={{ margin: 0, color: '#94A3B8', lineHeight: 1.6, fontSize: '14px' }}>
-                {selectedEvent.description}
-              </p>
-            </div>
+ <h4 style={{ margin: 0, marginBottom: '8px', fontSize: '14px', fontWeight: 600 }}>Description</h4>
+ <p style={{ margin: 0, color: '#94A3B8', lineHeight: 1.6, fontSize: '14px' }}>
+               {selectedEvent.description}
+ </p>
+ </div>
 
-            {/* Attachments */}
+           {/* Attachments */}
             {selectedEvent.attachments && selectedEvent.attachments.length > 0 && (
-              <div style={{ marginBottom: '20px' }}>
-                <h4 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: 600 }}>Attachments</h4>
-                {selectedEvent.attachments.map((file, idx) => (
-                  <div key={idx} style={{
+ <div style={{ marginBottom: '20px' }}>
+ <h4 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: 600 }}>Attachments</h4>
+               {selectedEvent.attachments.map((file, idx) => (
+ <div key={idx} style={{
                     padding: '14px',
                     background: 'var(--bg-tertiary)',
                     borderRadius: '10px',
@@ -828,9 +828,9 @@ const Calendar = () => {
                     gap: '12px',
                     marginBottom: idx < selectedEvent.attachments.length - 1 ? '8px' : 0
                   }}>
-                    <span style={{ fontSize: '24px' }}>📄</span>
-                    <span style={{ flex: 1, fontSize: '14px' }}>{file}</span>
-                    <button style={{
+ <span style={{ fontSize: '24px' }}></span>
+ <span style={{ flex: 1, fontSize: '14px' }}>{file}</span>
+ <button style={{
                       padding: '6px 14px',
                       background: 'var(--accent-primary)',
                       border: 'none',
@@ -840,19 +840,19 @@ const Calendar = () => {
                       fontSize: '13px',
                       fontWeight: 600
                     }}>
-                      Download
-                    </button>
-                  </div>
-                ))}
-              </div>
-            )}
+                     Download
+ </button>
+ </div>
+               ))}
+ </div>
+           )}
 
             {/* Attendee List Preview */}
-            <div style={{ marginBottom: '20px' }}>
-              <h4 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: 600 }}>Attendees ({selectedEvent.attendees})</h4>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                {[...Array(Math.min(5, selectedEvent.attendees))].map((_, i) => (
-                  <div key={i} style={{
+ <div style={{ marginBottom: '20px' }}>
+ <h4 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: 600 }}>Attendees ({selectedEvent.attendees})</h4>
+ <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+               {[...Array(Math.min(5, selectedEvent.attendees))].map((_, i) => (
+ <div key={i} style={{
                     width: '36px',
                     height: '36px',
                     borderRadius: '50%',
@@ -864,36 +864,36 @@ const Calendar = () => {
                     fontWeight: 600,
                     color: 'white'
                   }}>
-                    {String.fromCharCode(65 + i)}
-                  </div>
-                ))}
+                   {String.fromCharCode(65 + i)}
+ </div>
+               ))}
                 {selectedEvent.attendees > 5 && (
-                  <div style={{ fontSize: '13px', color: '#94A3B8', fontWeight: 500 }}>
-                    +{selectedEvent.attendees - 5} more
-                  </div>
-                )}
-              </div>
-            </div>
+ <div style={{ fontSize: '13px', color: '#94A3B8', fontWeight: 500 }}>
+                   +{selectedEvent.attendees - 5} more
+ </div>
+               )}
+ </div>
+ </div>
 
-            {/* Discussion Thread Teaser */}
-            <div style={{ 
+           {/* Discussion Thread Teaser */}
+ <div style={{ 
               padding: '16px',
               background: 'var(--bg-tertiary)',
               borderRadius: '12px',
               marginBottom: '20px'
             }}>
-              <h4 style={{ margin: 0, marginBottom: '12px', fontSize: '14px', fontWeight: 600 }}>
-                💬 Discussion (3)
-              </h4>
-              <div style={{ fontSize: '14px', color: '#94A3B8' }}>
-                <div style={{ marginBottom: '8px' }}>
-                  <strong style={{ color: 'var(--text-primary)' }}>Sarah:</strong> Can't wait for this!
-                </div>
-                <div>
-                  <strong style={{ color: 'var(--text-primary)' }}>Mike:</strong> Should we bring laptops?
-                </div>
-              </div>
-              <button style={{
+ <h4 style={{ margin: 0, marginBottom: '12px', fontSize: '14px', fontWeight: 600 }}>
+                Discussion (3)
+ </h4>
+ <div style={{ fontSize: '14px', color: '#94A3B8' }}>
+ <div style={{ marginBottom: '8px' }}>
+ <strong style={{ color: 'var(--text-primary)' }}>Sarah:</strong> Can't wait for this!
+ </div>
+ <div>
+ <strong style={{ color: 'var(--text-primary)' }}>Mike:</strong> Should we bring laptops?
+ </div>
+ </div>
+ <button style={{
                 marginTop: '12px',
                 padding: '8px 14px',
                 background: 'transparent',
@@ -905,13 +905,13 @@ const Calendar = () => {
                 fontWeight: 500,
                 width: '100%'
               }}>
-                View all comments →
-              </button>
-            </div>
+               View all comments →
+ </button>
+ </div>
 
-            {/* Bottom Actions */}
-            <div style={{ display: 'flex', gap: '12px' }}>
-              <button style={{
+           {/* Bottom Actions */}
+ <div style={{ display: 'flex', gap: '12px' }}>
+ <button style={{
                 flex: 1,
                 padding: '14px',
                 background: 'var(--accent-primary)',
@@ -922,9 +922,9 @@ const Calendar = () => {
                 fontSize: '14px',
                 fontWeight: 600
               }}>
-                💬 Message Organizer
-              </button>
-              <button 
+                Message Organizer
+ </button>
+ <button 
                 onClick={() => alert('Attendance logged automatically when present')}
                 style={{
                 flex: 1,
@@ -937,14 +937,14 @@ const Calendar = () => {
                 fontSize: '14px',
                 fontWeight: 600
               }}>
-                ✓ Check In
-              </button>
-            </div>
-          </div>
-        </>
-      )}
-    </div>
-  );
+                Check In
+ </button>
+ </div>
+ </div>
+ </>
+     )}
+ </div>
+ );
 };
 
 export default Calendar;

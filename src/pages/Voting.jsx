@@ -79,12 +79,12 @@ const Voting = () => {
     
     // Success animation and feedback
     setTimeout(() => {
-      alert('Vote recorded! +5 participation points earned 🗳️');
+      alert('Vote recorded! +5 participation points earned ');
     }, 300);
   };
 
   const CandidateProfile = ({ candidate, onClose }) => (
-    <div 
+ <div 
       style={{
         position: 'fixed',
         inset: 0,
@@ -97,7 +97,7 @@ const Voting = () => {
       }}
       onClick={onClose}
     >
-      <div 
+ <div 
         style={{
           background: 'var(--bg-secondary)',
           border: '1px solid var(--border-color)',
@@ -109,11 +109,11 @@ const Voting = () => {
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '20px' }}>
-          <div>
-            <h2 style={{ margin: 0, marginBottom: '8px' }}>{candidate.name}</h2>
-            {candidate.previousRole && (
-              <div style={{
+ <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '20px' }}>
+ <div>
+ <h2 style={{ margin: 0, marginBottom: '8px' }}>{candidate.name}</h2>
+           {candidate.previousRole && (
+ <div style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '6px',
@@ -124,11 +124,11 @@ const Voting = () => {
                 color: '#9333EA',
                 fontWeight: 600
               }}>
-                🏅 Previous {candidate.previousRole}
-              </div>
-            )}
-          </div>
-          <button 
+                Previous {candidate.previousRole}
+ </div>
+           )}
+ </div>
+ <button 
             onClick={onClose}
             style={{
               background: 'var(--bg-tertiary)',
@@ -144,29 +144,29 @@ const Voting = () => {
               color: 'var(--text-secondary)'
             }}
           >
-            ✕
-          </button>
-        </div>
+ 
+         </button>
+ </div>
 
-        <div style={{ marginBottom: '20px' }}>
-          <h4 style={{ fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-            Experience
-          </h4>
-          <p style={{ margin: 0, color: 'var(--text-primary)', lineHeight: 1.6 }}>
-            {candidate.experience}
-          </p>
-        </div>
+ <div style={{ marginBottom: '20px' }}>
+ <h4 style={{ fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+           Experience
+ </h4>
+ <p style={{ margin: 0, color: 'var(--text-primary)', lineHeight: 1.6 }}>
+           {candidate.experience}
+ </p>
+ </div>
 
-        <div style={{ marginBottom: '24px' }}>
-          <h4 style={{ fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-            Statement
-          </h4>
-          <p style={{ margin: 0, color: 'var(--text-primary)', lineHeight: 1.6 }}>
-            {candidate.statement}
-          </p>
-        </div>
+ <div style={{ marginBottom: '24px' }}>
+ <h4 style={{ fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+           Statement
+ </h4>
+ <p style={{ margin: 0, color: 'var(--text-primary)', lineHeight: 1.6 }}>
+           {candidate.statement}
+ </p>
+ </div>
 
-        <button 
+ <button 
           style={{
             width: '100%',
             padding: '14px',
@@ -180,24 +180,24 @@ const Voting = () => {
           }}
           onClick={onClose}
         >
-          Close Profile
-        </button>
-      </div>
-    </div>
-  );
+         Close Profile
+ </button>
+ </div>
+ </div>
+ );
 
   return (
-    <div className="dashboard">
-      <div className="dashboard-header">
-        <div className="dashboard-greeting">
-          <h1>Voting & Polls</h1>
-          <span className="school-name">Transparent, trustworthy voting for schools</span>
-        </div>
-      </div>
+ <div className="dashboard">
+ <div className="dashboard-header">
+ <div className="dashboard-greeting">
+ <h1>Voting & Polls</h1>
+ <span className="school-name">Transparent, trustworthy voting for schools</span>
+ </div>
+ </div>
 
-      <section>
-        <div style={{ marginBottom: '24px', display: 'flex', gap: '8px' }}>
-          <button 
+ <section>
+ <div style={{ marginBottom: '24px', display: 'flex', gap: '8px' }}>
+ <button 
             onClick={() => setView('active')}
             style={{
               padding: '10px 20px',
@@ -210,9 +210,9 @@ const Voting = () => {
               fontWeight: 500,
               transition: 'all var(--transition-base)'
             }}>
-            Active ({activePolls.length})
-          </button>
-          <button 
+           Active ({activePolls.length})
+ </button>
+ <button 
             onClick={() => setView('completed')}
             style={{
               padding: '10px 20px',
@@ -225,26 +225,26 @@ const Voting = () => {
               fontWeight: 500,
               transition: 'all var(--transition-base)'
             }}>
-            Completed
-          </button>
-        </div>
+           Completed
+ </button>
+ </div>
 
-        {view === 'active' && activePolls.map((poll) => {
+       {view === 'active' && activePolls.map((poll) => {
           const hasVoted = votedPolls[poll.id] !== undefined;
           const userVote = votedPolls[poll.id];
           
           return (
-            <div key={poll.id} className="post-card" style={{ maxWidth: '800px', marginBottom: '16px' }}>
-              {/* Poll Header */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '12px' }}>
-                <div style={{ flex: 1 }}>
-                  <h3 style={{ margin: 0, marginBottom: '8px' }}>{poll.title}</h3>
-                  <div style={{ fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '8px' }}>
-                    {poll.club} • {poll.total} votes • Ends in {poll.endsIn}
-                  </div>
+ <div key={poll.id} className="post-card" style={{ maxWidth: '800px', marginBottom: '16px' }}>
+             {/* Poll Header */}
+ <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '12px' }}>
+ <div style={{ flex: 1 }}>
+ <h3 style={{ margin: 0, marginBottom: '8px' }}>{poll.title}</h3>
+ <div style={{ fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '8px' }}>
+                   {poll.club} • {poll.total} votes • Ends in {poll.endsIn}
+ </div>
                   
-                  {/* Poll Rules */}
-                  <div style={{ 
+                 {/* Poll Rules */}
+ <div style={{ 
                     fontSize: '12px', 
                     color: 'var(--text-secondary)', 
                     padding: '8px 12px',
@@ -253,15 +253,15 @@ const Voting = () => {
                     marginBottom: '12px',
                     borderLeft: '3px solid var(--accent-primary)'
                   }}>
-                    <strong style={{ color: 'var(--text-primary)' }}>Rules:</strong> {poll.rules.whoCanVote} • 
+ <strong style={{ color: 'var(--text-primary)' }}>Rules:</strong> {poll.rules.whoCanVote} • 
                     Results {poll.rules.resultsVisible.toLowerCase()} • 
                     {poll.rules.canChange ? ' Votes can be changed' : ' Votes are final'}
-                  </div>
-                </div>
-                
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'flex-end' }}>
-                  {poll.anonymous && (
-                    <div style={{
+ </div>
+ </div>
+ 
+               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'flex-end' }}>
+                 {poll.anonymous && (
+ <div style={{
                       padding: '4px 10px',
                       background: 'rgba(59, 130, 246, 0.15)',
                       borderRadius: '12px',
@@ -270,11 +270,11 @@ const Voting = () => {
                       fontWeight: 500,
                       whiteSpace: 'nowrap'
                     }}>
-                      🔒 Anonymous
-                    </div>
-                  )}
+                      Anonymous
+ </div>
+                 )}
                   {poll.rewardPoints && (
-                    <div style={{
+ <div style={{
                       padding: '4px 10px',
                       background: 'rgba(34, 197, 94, 0.15)',
                       borderRadius: '12px',
@@ -283,34 +283,34 @@ const Voting = () => {
                       fontWeight: 500,
                       whiteSpace: 'nowrap'
                     }}>
-                      +{poll.rewardPoints} points
-                    </div>
-                  )}
-                </div>
-              </div>
+                     +{poll.rewardPoints} points
+ </div>
+                 )}
+ </div>
+ </div>
 
-              {/* Options */}
+             {/* Options */}
               {poll.options.map((option, idx) => {
                 const percentage = Math.round((option.votes / poll.total) * 100);
                 const isUserVote = hasVoted && userVote === idx;
                 
                 return (
-                  <div key={idx} style={{ marginBottom: '12px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                      <div style={{ flex: 1 }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                          <span style={{ 
+ <div key={idx} style={{ marginBottom: '12px' }}>
+ <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+ <div style={{ flex: 1 }}>
+ <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+ <span style={{ 
                             fontSize: '15px', 
                             fontWeight: 600, 
                             color: isUserVote ? 'var(--accent-primary)' : 'var(--text-primary)' 
                           }}>
-                            {option.name}
-                          </span>
-                          {isUserVote && (
-                            <span style={{ fontSize: '14px', color: 'var(--accent-primary)' }}>✓</span>
-                          )}
+                           {option.name}
+ </span>
+                         {isUserVote && (
+ <span style={{ fontSize: '14px', color: 'var(--accent-primary)' }}></span>
+                         )}
                           {poll.type === 'election' && option.previousRole && (
-                            <span style={{
+ <span style={{
                               fontSize: '11px',
                               padding: '2px 6px',
                               background: 'rgba(147, 51, 234, 0.15)',
@@ -318,12 +318,12 @@ const Voting = () => {
                               color: '#9333EA',
                               fontWeight: 600
                             }}>
-                              🏅 {option.previousRole}
-                            </span>
-                          )}
-                        </div>
-                        {poll.type === 'election' && (
-                          <button 
+                              {option.previousRole}
+ </span>
+                         )}
+ </div>
+                       {poll.type === 'election' && (
+ <button 
                             onClick={() => setSelectedCandidate(option)}
                             style={{
                               background: 'none',
@@ -335,17 +335,17 @@ const Voting = () => {
                               textDecoration: 'underline'
                             }}
                           >
-                            View profile →
-                          </button>
-                        )}
-                      </div>
-                      <span style={{ fontSize: '14px', color: 'var(--text-secondary)', fontWeight: 500 }}>
-                        {option.votes} votes • {percentage}%
-                      </span>
-                    </div>
+                           View profile →
+ </button>
+                       )}
+ </div>
+ <span style={{ fontSize: '14px', color: 'var(--text-secondary)', fontWeight: 500 }}>
+                       {option.votes} votes • {percentage}%
+ </span>
+ </div>
 
-                    {/* Visual Progress Bar */}
-                    <div 
+                   {/* Visual Progress Bar */}
+ <div 
                       onClick={() => !hasVoted && handleVote(poll.id, idx)}
                       style={{
                         width: '100%',
@@ -361,7 +361,7 @@ const Voting = () => {
                       onMouseEnter={(e) => !hasVoted && (e.currentTarget.style.borderColor = 'var(--accent-primary)')}
                       onMouseLeave={(e) => !hasVoted && !isUserVote && (e.currentTarget.style.borderColor = 'var(--border-color)')}
                     >
-                      <div style={{
+ <div style={{
                         width: `${percentage}%`,
                         height: '100%',
                         background: isUserVote 
@@ -376,16 +376,16 @@ const Voting = () => {
                         transition: 'width 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
                         animation: hasVoted && isUserVote ? 'voteSuccess 0.5s ease-out' : 'none'
                       }}>
-                        {!hasVoted && percentage > 15 && 'Click to vote'}
-                      </div>
-                    </div>
-                  </div>
-                );
+                       {!hasVoted && percentage > 15 && 'Click to vote'}
+ </div>
+ </div>
+ </div>
+               );
               })}
 
               {/* Vote Status / Button */}
               {hasVoted ? (
-                <div style={{
+ <div style={{
                   marginTop: '16px',
                   padding: '12px 16px',
                   background: 'rgba(34, 197, 94, 0.15)',
@@ -396,18 +396,18 @@ const Voting = () => {
                   gap: '8px',
                   animation: 'fadeIn 0.3s ease-out'
                 }}>
-                  <span style={{ fontSize: '20px' }}>✓</span>
-                  <div>
-                    <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--accent-green)' }}>
-                      Vote recorded!
-                    </div>
-                    <div style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>
-                      Earned +{poll.rewardPoints} participation points 🗳️ Active Member
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div style={{
+ <span style={{ fontSize: '20px' }}></span>
+ <div>
+ <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--accent-green)' }}>
+                     Vote recorded!
+ </div>
+ <div style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>
+                     Earned +{poll.rewardPoints} participation points  Active Member
+ </div>
+ </div>
+ </div>
+             ) : (
+ <div style={{
                   marginTop: '16px',
                   padding: '12px 16px',
                   background: 'var(--bg-tertiary)',
@@ -416,45 +416,45 @@ const Voting = () => {
                   fontSize: '13px',
                   color: 'var(--text-secondary)'
                 }}>
-                  Click on any option above to cast your vote
-                </div>
-              )}
-            </div>
-          );
+                 Click on any option above to cast your vote
+ </div>
+             )}
+ </div>
+         );
         })}
 
         {view === 'completed' && completedPolls.map((poll) => (
-          <div key={poll.id} className="post-card" style={{ maxWidth: '800px', marginBottom: '16px', opacity: 0.9 }}>
-            <h3 style={{ margin: 0, marginBottom: '8px' }}>{poll.title}</h3>
-            <div style={{ fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '12px' }}>
-              {poll.club} • Completed {poll.completedDate}
-            </div>
-            <div style={{
+ <div key={poll.id} className="post-card" style={{ maxWidth: '800px', marginBottom: '16px', opacity: 0.9 }}>
+ <h3 style={{ margin: 0, marginBottom: '8px' }}>{poll.title}</h3>
+ <div style={{ fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '12px' }}>
+             {poll.club} • Completed {poll.completedDate}
+ </div>
+ <div style={{
               padding: '16px',
               background: 'rgba(34, 197, 94, 0.15)',
               borderRadius: '8px',
               border: '1px solid rgba(34, 197, 94, 0.3)'
             }}>
-              <div style={{ fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '4px' }}>Winner</div>
-              <div style={{ fontSize: '18px', fontWeight: 600, color: 'var(--accent-green)' }}>{poll.winner}</div>
-              <div style={{ fontSize: '13px', color: 'var(--text-secondary)', marginTop: '8px' }}>
-                {poll.votes} out of {poll.total} votes ({Math.round((poll.votes / poll.total) * 100)}%)
-              </div>
-            </div>
-          </div>
-        ))}
-      </section>
+ <div style={{ fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '4px' }}>Winner</div>
+ <div style={{ fontSize: '18px', fontWeight: 600, color: 'var(--accent-green)' }}>{poll.winner}</div>
+ <div style={{ fontSize: '13px', color: 'var(--text-secondary)', marginTop: '8px' }}>
+               {poll.votes} out of {poll.total} votes ({Math.round((poll.votes / poll.total) * 100)}%)
+ </div>
+ </div>
+ </div>
+       ))}
+ </section>
 
-      {/* Candidate Profile Modal */}
+     {/* Candidate Profile Modal */}
       {selectedCandidate && (
-        <CandidateProfile 
+ <CandidateProfile 
           candidate={selectedCandidate} 
           onClose={() => setSelectedCandidate(null)} 
         />
-      )}
+     )}
 
       {/* Animation Styles */}
-      <style>{`
+ <style>{`
         @keyframes voteSuccess {
           0% { transform: scaleX(0); }
           50% { transform: scaleX(1.05); }
@@ -466,8 +466,8 @@ const Voting = () => {
           to { opacity: 1; transform: translateY(0); }
         }
       `}</style>
-    </div>
-  );
+ </div>
+ );
 };
 
 export default Voting;

@@ -114,15 +114,15 @@ const Projects = () => {
 
   const getPriorityLabel = (priority) => {
     switch(priority) {
-      case 'high': return '🔴 High Priority';
-      case 'medium': return '🟡 Medium';
-      case 'low': return '🟢 Low';
+      case 'high': return ' High Priority';
+      case 'medium': return ' Medium';
+      case 'low': return ' Low';
       default: return '';
     }
   };
 
   const ProjectCard = ({ project, status }) => (
-    <div 
+ <div 
       onClick={() => setSelectedProject(project)}
       style={{
         background: 'var(--bg-tertiary)',
@@ -142,62 +142,62 @@ const Projects = () => {
         e.currentTarget.style.boxShadow = 'none';
       }}
     >
-      {/* Project Header */}
-      <div style={{ marginBottom: '12px' }}>
-        <div style={{ 
+     {/* Project Header */}
+ <div style={{ marginBottom: '12px' }}>
+ <div style={{ 
           display: 'flex', 
           alignItems: 'flex-start', 
           justifyContent: 'space-between',
           marginBottom: '8px'
         }}>
-          <h4 style={{ 
+ <h4 style={{ 
             margin: 0, 
             fontWeight: 600, 
             color: 'var(--text-primary)',
             fontSize: '15px',
             flex: 1
           }}>
-            {project.title}
-          </h4>
-        </div>
-        
-        <div style={{ 
+           {project.title}
+ </h4>
+ </div>
+ 
+       <div style={{ 
           display: 'flex', 
           alignItems: 'center', 
           gap: '8px',
           flexWrap: 'wrap',
           marginBottom: '8px'
         }}>
-          <span style={{ 
+ <span style={{ 
             fontSize: '12px', 
             color: 'var(--text-secondary)',
             fontWeight: 500
           }}>
-            {project.club}
-          </span>
-          {project.priority && (
-            <>
-              <span style={{ color: 'var(--text-secondary)' }}>•</span>
-              <span style={{ 
+           {project.club}
+ </span>
+         {project.priority && (
+ <>
+ <span style={{ color: 'var(--text-secondary)' }}>•</span>
+ <span style={{ 
                 fontSize: '11px', 
                 fontWeight: 600,
                 color: getPriorityColor(project.priority)
               }}>
-                {getPriorityLabel(project.priority)}
-              </span>
-            </>
-          )}
-        </div>
+               {getPriorityLabel(project.priority)}
+ </span>
+ </>
+         )}
+ </div>
 
-        {/* Lead & Team */}
-        <div style={{ 
+       {/* Lead & Team */}
+ <div style={{ 
           display: 'flex', 
           alignItems: 'center',
           gap: '8px',
           marginTop: '12px'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <div style={{
+ <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+ <div style={{
               width: '28px',
               height: '28px',
               borderRadius: '50%',
@@ -210,24 +210,24 @@ const Projects = () => {
               fontWeight: 600,
               border: '2px solid var(--bg-tertiary)'
             }}>
-              {project.lead.avatar}
-            </div>
-            <div style={{ fontSize: '12px' }}>
-              <div style={{ fontWeight: 600, color: 'var(--text-primary)' }}>
-                {project.lead.name}
-              </div>
-              <div style={{ fontSize: '10px', color: 'var(--text-secondary)' }}>
-                {project.lead.role}
-              </div>
-            </div>
-          </div>
+             {project.lead.avatar}
+ </div>
+ <div style={{ fontSize: '12px' }}>
+ <div style={{ fontWeight: 600, color: 'var(--text-primary)' }}>
+               {project.lead.name}
+ </div>
+ <div style={{ fontSize: '10px', color: 'var(--text-secondary)' }}>
+               {project.lead.role}
+ </div>
+ </div>
+ </div>
 
-          {project.team && project.team.length > 0 && (
-            <>
-              <span style={{ color: 'var(--text-secondary)', fontSize: '12px' }}>+</span>
-              {project.team.slice(0, 2).map((member, idx) => (
-                <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                  <div style={{
+         {project.team && project.team.length > 0 && (
+ <>
+ <span style={{ color: 'var(--text-secondary)', fontSize: '12px' }}>+</span>
+             {project.team.slice(0, 2).map((member, idx) => (
+ <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+ <div style={{
                     width: '24px',
                     height: '24px',
                     borderRadius: '50%',
@@ -239,101 +239,101 @@ const Projects = () => {
                     color: 'white',
                     fontWeight: 600
                   }}>
-                    {member.avatar}
-                  </div>
-                </div>
-              ))}
+                   {member.avatar}
+ </div>
+ </div>
+             ))}
               {project.team.length > 2 && (
-                <span style={{ fontSize: '11px', color: 'var(--text-secondary)' }}>
-                  +{project.team.length - 2}
-                </span>
-              )}
-            </>
-          )}
-        </div>
-      </div>
+ <span style={{ fontSize: '11px', color: 'var(--text-secondary)' }}>
+                 +{project.team.length - 2}
+ </span>
+             )}
+ </>
+         )}
+ </div>
+ </div>
 
-      {/* Progress Bar with Milestones */}
+     {/* Progress Bar with Milestones */}
       {project.progress !== undefined && (
-        <div 
+ <div 
           style={{ marginBottom: '12px', cursor: 'pointer' }}
           onClick={(e) => {
             e.stopPropagation();
             setExpandedProgress(expandedProgress === project.id ? null : project.id);
           }}
         >
-          <div style={{ 
+ <div style={{ 
             display: 'flex', 
             justifyContent: 'space-between',
             alignItems: 'center',
             marginBottom: '6px'
           }}>
-            <div style={{ fontSize: '11px', color: 'var(--text-secondary)', fontWeight: 500 }}>
-              {project.milestones.completed}/{project.milestones.total} tasks • {project.progress}%
-            </div>
-            <div style={{ fontSize: '10px', color: 'var(--text-secondary)' }}>
-              {expandedProgress === project.id ? '▼' : '▶'} Details
-            </div>
-          </div>
-          <div style={{ 
+ <div style={{ fontSize: '11px', color: 'var(--text-secondary)', fontWeight: 500 }}>
+             {project.milestones.completed}/{project.milestones.total} tasks • {project.progress}%
+ </div>
+ <div style={{ fontSize: '10px', color: 'var(--text-secondary)' }}>
+             {expandedProgress === project.id ? '▼' : '▶'} Details
+ </div>
+ </div>
+ <div style={{ 
             width: '100%', 
             height: '8px', 
             background: 'var(--bg-primary)',
             borderRadius: '4px',
             overflow: 'hidden'
           }}>
-            <div style={{
+ <div style={{
               width: `${project.progress}%`,
               height: '100%',
               background: 'var',
               transition: 'width 0.5s ease-out'
             }}></div>
-          </div>
+ </div>
           
-          {/* Expanded Checklist */}
+         {/* Expanded Checklist */}
           {expandedProgress === project.id && project.checklist && (
-            <div style={{ 
+ <div style={{ 
               marginTop: '12px', 
               padding: '12px',
               background: 'var(--bg-secondary)',
               borderRadius: '6px',
               fontSize: '12px'
             }}>
-              {project.checklist.map((item, idx) => (
-                <div key={idx} style={{ 
+             {project.checklist.map((item, idx) => (
+ <div key={idx} style={{ 
                   display: 'flex', 
                   alignItems: 'center', 
                   gap: '8px',
                   marginBottom: '8px',
                   color: item.done ? 'var(--text-secondary)' : 'var(--text-primary)'
                 }}>
-                  <span style={{ fontSize: '14px' }}>
-                    {item.done ? '✅' : '⬜'}
-                  </span>
-                  <span style={{ textDecoration: item.done ? 'line-through' : 'none' }}>
-                    {item.task}
-                  </span>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
+ <span style={{ fontSize: '14px' }}>
+                   {item.done ? '' : ''}
+ </span>
+ <span style={{ textDecoration: item.done ? 'line-through' : 'none' }}>
+                   {item.task}
+ </span>
+ </div>
+             ))}
+ </div>
+         )}
+ </div>
+     )}
 
       {/* Footer: Due Date & Actions */}
-      <div style={{ 
+ <div style={{ 
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'space-between',
         paddingTop: '12px',
         borderTop: '1px solid var(--border-color)'
       }}>
-        <div style={{ fontSize: '12px', color: 'var(--text-secondary)', fontWeight: 500 }}>
-          📅 {status === 'completed' ? `Completed ${project.completedDate}` : `Due ${project.dueDate}`}
-        </div>
-        <div style={{ display: 'flex', gap: '4px' }}>
-          {project.messages !== undefined && (
-            <div style={{
+ <div style={{ fontSize: '12px', color: 'var(--text-secondary)', fontWeight: 500 }}>
+          {status === 'completed' ? `Completed ${project.completedDate}` : `Due ${project.dueDate}`}
+ </div>
+ <div style={{ display: 'flex', gap: '4px' }}>
+         {project.messages !== undefined && (
+ <div style={{
               padding: '4px 8px',
               background: 'var(--bg-secondary)',
               borderRadius: '4px',
@@ -343,11 +343,11 @@ const Projects = () => {
               alignItems: 'center',
               gap: '4px'
             }}>
-              💬 {project.messages}
-            </div>
-          )}
+              {project.messages}
+ </div>
+         )}
           {project.files !== undefined && (
-            <div style={{
+ <div style={{
               padding: '4px 8px',
               background: 'var(--bg-secondary)',
               borderRadius: '4px',
@@ -357,21 +357,21 @@ const Projects = () => {
               alignItems: 'center',
               gap: '4px'
             }}>
-              📎 {project.files}
-            </div>
-          )}
-        </div>
-      </div>
+              {project.files}
+ </div>
+         )}
+ </div>
+ </div>
 
-      {/* Quick Actions */}
-      <div style={{ 
+     {/* Quick Actions */}
+ <div style={{ 
         display: 'flex', 
         gap: '6px', 
         marginTop: '12px',
         paddingTop: '12px',
         borderTop: '1px solid var(--border-color)'
       }}>
-        <button 
+ <button 
           onClick={(e) => {
             e.stopPropagation();
             alert('View project details');
@@ -388,9 +388,9 @@ const Projects = () => {
             cursor: 'pointer'
           }}
         >
-          View
-        </button>
-        <button 
+         View
+ </button>
+ <button 
           onClick={(e) => {
             e.stopPropagation();
             alert('Update project');
@@ -407,9 +407,9 @@ const Projects = () => {
             cursor: 'pointer'
           }}
         >
-          Update
-        </button>
-        <button 
+         Update
+ </button>
+ <button 
           onClick={(e) => {
             e.stopPropagation();
             alert('Message team');
@@ -425,20 +425,20 @@ const Projects = () => {
             cursor: 'pointer'
           }}
         >
-          💬
-        </button>
-      </div>
-    </div>
-  );
+ 
+       </button>
+ </div>
+ </div>
+ );
 
   return (
-    <div className="dashboard">
-      <div className="dashboard-header">
-        <div className="dashboard-greeting">
-          <h1>Projects</h1>
-          <span className="school-name">Lightweight Notion + Trello for clubs</span>
-        </div>
-        <button style={{
+ <div className="dashboard">
+ <div className="dashboard-header">
+ <div className="dashboard-greeting">
+ <h1>Projects</h1>
+ <span className="school-name">Lightweight Notion + Trello for clubs</span>
+ </div>
+ <button style={{
           padding: '10px 20px',
           background: 'var(--accent-primary)',
           border: 'none',
@@ -448,20 +448,20 @@ const Projects = () => {
           fontSize: '14px',
           fontWeight: 600
         }}>
-          + Create Project
-        </button>
-      </div>
+         + Create Project
+ </button>
+ </div>
 
-      {/* Toggle: My Tasks vs All Projects */}
-      <section style={{ marginBottom: '24px' }}>
-        <div style={{ 
+     {/* Toggle: My Tasks vs All Projects */}
+ <section style={{ marginBottom: '24px' }}>
+ <div style={{ 
           display: 'inline-flex',
           background: 'var(--bg-secondary)',
           border: '1px solid var(--border-color)',
           borderRadius: '8px',
           padding: '4px'
         }}>
-          <button
+ <button
             onClick={() => setViewMode('mine')}
             style={{
               padding: '8px 16px',
@@ -475,9 +475,9 @@ const Projects = () => {
               transition: 'all var(--transition-base)'
             }}
           >
-            🔘 My Assigned Tasks
-          </button>
-          <button
+            My Assigned Tasks
+ </button>
+ <button
             onClick={() => setViewMode('all')}
             style={{
               padding: '8px 16px',
@@ -491,28 +491,28 @@ const Projects = () => {
               transition: 'all var(--transition-base)'
             }}
           >
-            🔘 All Club Projects
-          </button>
-        </div>
-      </section>
+            All Club Projects
+ </button>
+ </div>
+ </section>
 
-      <section>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '16px' }}>
-          {/* To Do Column */}
-          <div style={{
+ <section>
+ <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '16px' }}>
+         {/* To Do Column */}
+ <div style={{
             background: 'var(--bg-secondary)',
             border: '1px solid var(--border-color)',
             borderRadius: '12px',
             padding: '20px'
           }}>
-            <div style={{ 
+ <div style={{ 
               display: 'flex', 
               alignItems: 'center', 
               justifyContent: 'space-between',
               marginBottom: '16px'
             }}>
-              <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 600 }}>📋 To Do</h3>
-              <div style={{
+ <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 600 }}> To Do</h3>
+ <div style={{
                 background: 'var(--bg-tertiary)',
                 padding: '4px 10px',
                 borderRadius: '12px',
@@ -520,29 +520,29 @@ const Projects = () => {
                 color: 'var(--text-secondary)',
                 fontWeight: 600
               }}>
-                {filteredProjects.todo.length}
-              </div>
-            </div>
-            {filteredProjects.todo.map((project) => (
-              <ProjectCard key={project.id} project={project} status="todo" />
-            ))}
-          </div>
+               {filteredProjects.todo.length}
+ </div>
+ </div>
+           {filteredProjects.todo.map((project) => (
+ <ProjectCard key={project.id} project={project} status="todo" />
+           ))}
+ </div>
 
-          {/* In Progress Column */}
-          <div style={{
+         {/* In Progress Column */}
+ <div style={{
             background: 'var(--bg-secondary)',
             border: '1px solid var(--border-color)',
             borderRadius: '12px',
             padding: '20px'
           }}>
-            <div style={{ 
+ <div style={{ 
               display: 'flex', 
               alignItems: 'center', 
               justifyContent: 'space-between',
               marginBottom: '16px'
             }}>
-              <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 600 }}>🔄 In Progress</h3>
-              <div style={{
+ <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 600 }}> In Progress</h3>
+ <div style={{
                 background: 'rgba(59, 130, 246, 0.15)',
                 padding: '4px 10px',
                 borderRadius: '12px',
@@ -550,29 +550,29 @@ const Projects = () => {
                 color: 'var(--accent-primary)',
                 fontWeight: 600
               }}>
-                {filteredProjects.inProgress.length}
-              </div>
-            </div>
-            {filteredProjects.inProgress.map((project) => (
-              <ProjectCard key={project.id} project={project} status="inProgress" />
-            ))}
-          </div>
+               {filteredProjects.inProgress.length}
+ </div>
+ </div>
+           {filteredProjects.inProgress.map((project) => (
+ <ProjectCard key={project.id} project={project} status="inProgress" />
+           ))}
+ </div>
 
-          {/* Completed Column */}
-          <div style={{
+         {/* Completed Column */}
+ <div style={{
             background: 'var(--bg-secondary)',
             border: '1px solid var(--border-color)',
             borderRadius: '12px',
             padding: '20px'
           }}>
-            <div style={{ 
+ <div style={{ 
               display: 'flex', 
               alignItems: 'center', 
               justifyContent: 'space-between',
               marginBottom: '16px'
             }}>
-              <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 600 }}>✓ Completed</h3>
-              <div style={{
+ <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 600 }}> Completed</h3>
+ <div style={{
                 background: 'rgba(34, 197, 94, 0.15)',
                 padding: '4px 10px',
                 borderRadius: '12px',
@@ -580,11 +580,11 @@ const Projects = () => {
                 color: 'var(--accent-green)',
                 fontWeight: 600
               }}>
-                {filteredProjects.completed.length}
-              </div>
-            </div>
-            {filteredProjects.completed.map((project) => (
-              <div 
+               {filteredProjects.completed.length}
+ </div>
+ </div>
+           {filteredProjects.completed.map((project) => (
+ <div 
                 key={project.id}
                 style={{
                   background: 'var(--bg-tertiary)',
@@ -595,14 +595,14 @@ const Projects = () => {
                   opacity: 0.8
                 }}
               >
-                <div style={{ fontWeight: 600, marginBottom: '8px', color: 'var(--text-primary)', textDecoration: 'line-through' }}>
-                  {project.title}
-                </div>
-                <div style={{ fontSize: '12px', color: 'var(--text-secondary)', marginBottom: '8px' }}>
-                  {project.club} • Completed {project.completedDate}
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <div style={{
+ <div style={{ fontWeight: 600, marginBottom: '8px', color: 'var(--text-primary)', textDecoration: 'line-through' }}>
+                 {project.title}
+ </div>
+ <div style={{ fontSize: '12px', color: 'var(--text-secondary)', marginBottom: '8px' }}>
+                 {project.club} • Completed {project.completedDate}
+ </div>
+ <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+ <div style={{
                     width: '24px',
                     height: '24px',
                     borderRadius: '50%',
@@ -614,19 +614,19 @@ const Projects = () => {
                     color: 'white',
                     fontWeight: 600
                   }}>
-                    {project.lead.avatar}
-                  </div>
-                  <span style={{ fontSize: '11px', color: 'var(--text-secondary)' }}>
-                    {project.lead.name} • {project.lead.role}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </div>
-  );
+                   {project.lead.avatar}
+ </div>
+ <span style={{ fontSize: '11px', color: 'var(--text-secondary)' }}>
+                   {project.lead.name} • {project.lead.role}
+ </span>
+ </div>
+ </div>
+           ))}
+ </div>
+ </div>
+ </section>
+ </div>
+ );
 };
 
 export default Projects;

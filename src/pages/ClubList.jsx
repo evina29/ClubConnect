@@ -66,7 +66,7 @@ const ClubList = () => {
 
   useEffect(() => {
     let filtered = clubs.filter((club) =>
-      club.name.toLowerCase().includes(search.toLowerCase())
+     club.name.toLowerCase().includes(search.toLowerCase())
     );
     if (filter !== 'All') {
       filtered = filtered.filter((club) => club.category === filter);
@@ -77,14 +77,14 @@ const ClubList = () => {
   const categories = ['All', 'Academic', 'Arts', 'Sports', 'Service', 'Culture'];
 
   return (
-    <div className="club-list-page">
-      <h1 className="club-list-page__title">Explore Clubs</h1>
+ <div className="club-list-page">
+ <h1 className="club-list-page__title">Explore Clubs</h1>
 
-      <label className="club-list-page__search" htmlFor="explore-club-search">
-        <span className="club-list-page__search-icon" aria-hidden="true">
-          🔍
-        </span>
-        <input
+ <label className="club-list-page__search" htmlFor="explore-club-search">
+ <span className="club-list-page__search-icon" aria-hidden="true">
+ 
+       </span>
+ <input
           id="explore-club-search"
           className="club-list-page__search-input"
           type="search"
@@ -93,15 +93,15 @@ const ClubList = () => {
           onChange={(e) => setSearch(e.target.value)}
           autoComplete="off"
         />
-      </label>
+ </label>
 
-      <div
+ <div
         className="club-list-page__chips"
         role="tablist"
         aria-label="Categories"
       >
-        {categories.map((cat) => (
-          <button
+       {categories.map((cat) => (
+ <button
             key={cat}
             type="button"
             role="tab"
@@ -109,23 +109,23 @@ const ClubList = () => {
             className={`club-list-page__chip${filter === cat ? ' club-list-page__chip--active' : ''}`}
             onClick={() => setFilter(cat)}
           >
-            {cat}
-          </button>
-        ))}
-      </div>
+           {cat}
+ </button>
+       ))}
+ </div>
 
-      <p className="club-list-page__meta">
-        {filteredClubs.length} club{filteredClubs.length !== 1 ? 's' : ''}
+ <p className="club-list-page__meta">
+       {filteredClubs.length} club{filteredClubs.length !== 1 ? 's' : ''}
         {filter !== 'All' ? ` · ${filter}` : ''}
-      </p>
+ </p>
 
-      <div className="club-list-page__grid">
-        {filteredClubs.map((club) => (
-          <ClubCard key={club.id} club={club} />
-        ))}
-      </div>
-    </div>
-  );
+ <div className="club-list-page__grid">
+       {filteredClubs.map((club) => (
+ <ClubCard key={club.id} club={club} />
+       ))}
+ </div>
+ </div>
+ );
 };
 
 export default ClubList;

@@ -83,113 +83,113 @@ const Analytics = () => {
   };
 
   return (
-    <div className="analytics-page">
-      <div className="analytics-header">
-        <div>
-          <h1>📊 Analytics Dashboard</h1>
-          <p>Insights into your club engagement</p>
-        </div>
-        <select 
+ <div className="analytics-page">
+ <div className="analytics-header">
+ <div>
+ <h1> Analytics Dashboard</h1>
+ <p>Insights into your club engagement</p>
+ </div>
+ <select 
           value={timeRange} 
           onChange={(e) => setTimeRange(e.target.value)}
           className="time-range-select"
         >
-          <option value="week">This Week</option>
-          <option value="month">This Month</option>
-          <option value="semester">This Semester</option>
-          <option value="year">This Year</option>
-        </select>
-      </div>
+ <option value="week">This Week</option>
+ <option value="month">This Month</option>
+ <option value="semester">This Semester</option>
+ <option value="year">This Year</option>
+ </select>
+ </div>
 
-      <div className="analytics-grid">
-        <div className="metric-card highlight">
-          <div className="metric-icon">📈</div>
-          <div className="metric-content">
-            <h3>Total Events</h3>
-            <p className="metric-value">{user?.eventsAttended || 0}</p>
-            <span className="metric-change positive">+15% from last week</span>
-          </div>
-        </div>
+ <div className="analytics-grid">
+ <div className="metric-card highlight">
+ <div className="metric-icon"></div>
+ <div className="metric-content">
+ <h3>Total Events</h3>
+ <p className="metric-value">{user?.eventsAttended || 0}</p>
+ <span className="metric-change positive">+15% from last week</span>
+ </div>
+ </div>
 
-        <div className="metric-card highlight">
-          <div className="metric-icon">⭐</div>
-          <div className="metric-content">
-            <h3>Engagement Score</h3>
-            <p className="metric-value">85%</p>
-            <span className="metric-change positive">+8% from last week</span>
-          </div>
-        </div>
+ <div className="metric-card highlight">
+ <div className="metric-icon"></div>
+ <div className="metric-content">
+ <h3>Engagement Score</h3>
+ <p className="metric-value">85%</p>
+ <span className="metric-change positive">+8% from last week</span>
+ </div>
+ </div>
 
-        <div className="metric-card highlight">
-          <div className="metric-icon">🏆</div>
-          <div className="metric-content">
-            <h3>Leaderboard Rank</h3>
-            <p className="metric-value">#12</p>
-            <span className="metric-change positive">+3 positions</span>
-          </div>
-        </div>
+ <div className="metric-card highlight">
+ <div className="metric-icon"></div>
+ <div className="metric-content">
+ <h3>Leaderboard Rank</h3>
+ <p className="metric-value">#12</p>
+ <span className="metric-change positive">+3 positions</span>
+ </div>
+ </div>
 
-        <div className="metric-card highlight">
-          <div className="metric-icon">⏱️</div>
-          <div className="metric-content">
-            <h3>Hours This Month</h3>
-            <p className="metric-value">{user?.hoursVolunteered || 0}h</p>
-            <span className="metric-change positive">+5h from last month</span>
-          </div>
-        </div>
-      </div>
+ <div className="metric-card highlight">
+ <div className="metric-icon">⏱</div>
+ <div className="metric-content">
+ <h3>Hours This Month</h3>
+ <p className="metric-value">{user?.hoursVolunteered || 0}h</p>
+ <span className="metric-change positive">+5h from last month</span>
+ </div>
+ </div>
+ </div>
 
-      <div className="charts-grid">
-        <div className="chart-card">
-          <h2>Weekly Engagement Trend</h2>
-          <div className="chart-container">
-            <Line data={engagementData} options={chartOptions} />
-          </div>
-        </div>
+ <div className="charts-grid">
+ <div className="chart-card">
+ <h2>Weekly Engagement Trend</h2>
+ <div className="chart-container">
+ <Line data={engagementData} options={chartOptions} />
+ </div>
+ </div>
 
-        <div className="chart-card">
-          <h2>Club Distribution</h2>
-          <div className="chart-container">
-            <Doughnut data={clubDistributionData} options={chartOptions} />
-          </div>
-        </div>
+ <div className="chart-card">
+ <h2>Club Distribution</h2>
+ <div className="chart-container">
+ <Doughnut data={clubDistributionData} options={chartOptions} />
+ </div>
+ </div>
 
-        <div className="chart-card wide">
-          <h2>Attendance Comparison</h2>
-          <div className="chart-container">
-            <Bar data={attendanceComparisonData} options={chartOptions} />
-          </div>
-        </div>
-      </div>
+ <div className="chart-card wide">
+ <h2>Attendance Comparison</h2>
+ <div className="chart-container">
+ <Bar data={attendanceComparisonData} options={chartOptions} />
+ </div>
+ </div>
+ </div>
 
-      <div className="insights-section">
-        <h2>💡 Key Insights</h2>
-        <div className="insights-grid">
-          <div className="insight-card">
-            <div className="insight-icon">🔥</div>
-            <div className="insight-content">
-              <h3>Consistent Engagement</h3>
-              <p>You've attended events 4 weeks in a row! Keep up the great work.</p>
-            </div>
-          </div>
-          <div className="insight-card">
-            <div className="insight-icon">📚</div>
-            <div className="insight-content">
-              <h3>STEM Focus</h3>
-              <p>60% of your activities are STEM-related. Consider exploring other areas!</p>
-            </div>
-          </div>
-          <div className="insight-card">
-            <div className="insight-icon">🎯</div>
-            <div className="insight-content">
-              <h3>Peak Activity</h3>
-              <p>Thursdays are your most active days with 5 events attended on average.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+ <div className="insights-section">
+ <h2> Key Insights</h2>
+ <div className="insights-grid">
+ <div className="insight-card">
+ <div className="insight-icon"></div>
+ <div className="insight-content">
+ <h3>Consistent Engagement</h3>
+ <p>You've attended events 4 weeks in a row! Keep up the great work.</p>
+ </div>
+ </div>
+ <div className="insight-card">
+ <div className="insight-icon"></div>
+ <div className="insight-content">
+ <h3>STEM Focus</h3>
+ <p>60% of your activities are STEM-related. Consider exploring other areas!</p>
+ </div>
+ </div>
+ <div className="insight-card">
+ <div className="insight-icon"></div>
+ <div className="insight-content">
+ <h3>Peak Activity</h3>
+ <p>Thursdays are your most active days with 5 events attended on average.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ );
 };
 
 export default Analytics;

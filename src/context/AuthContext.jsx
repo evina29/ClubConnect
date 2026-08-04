@@ -47,7 +47,7 @@ export const AuthProvider = ({ children }) => {
       password: password, // Store password for login validation
       name: name || email.split('@')[0] || 'User',
       username: extendedData.username || '',
-      profilePic: extendedData.profilePic || '👤',
+      profilePic: extendedData.profilePic || '',
       school: extendedData.school || '',
       language: extendedData.language || 'en',
       role: extendedData.role || 'student',
@@ -91,8 +91,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={value}>
-      {!loading && children}
-    </AuthContext.Provider>
-  );
+ <AuthContext.Provider value={value}>
+     {!loading && children}
+ </AuthContext.Provider>
+ );
 };

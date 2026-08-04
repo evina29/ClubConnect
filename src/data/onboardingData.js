@@ -12,25 +12,25 @@ export const schools = [
 
 // Languages for multi-language support
 export const languages = [
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-  { code: 'zh', name: '中文', flag: '🇨🇳' },
-  { code: 'ja', name: '日本語', flag: '🇯🇵' },
-  { code: 'ar', name: 'العربية', flag: '🇸🇦' },
-  { code: 'hi', name: 'हिन्दी', flag: '🇮🇳' },
+  { code: 'en', name: 'English', flag: '' },
+  { code: 'es', name: 'Español', flag: '' },
+  { code: 'fr', name: 'Français', flag: '' },
+  { code: 'de', name: 'Deutsch', flag: '' },
+  { code: 'zh', name: '中文', flag: '' },
+  { code: 'ja', name: '日本語', flag: '' },
+  { code: 'ar', name: 'العربية', flag: '' },
+  { code: 'hi', name: 'हिन्दी', flag: '' },
 ];
 
 // User roles
 export const userRoles = [
-  { id: 'student', name: 'Student / Member', icon: '👤', description: 'Regular club member' },
-  { id: 'president', name: 'President', icon: '👑', description: 'Club president or leader' },
-  { id: 'vicepresident', name: 'Vice President', icon: '⭐', description: 'Second in command' },
-  { id: 'treasurer', name: 'Treasurer', icon: '💰', description: 'Manages club finances' },
-  { id: 'secretary', name: 'Secretary', icon: '📝', description: 'Records meetings and activities' },
-  { id: 'officer', name: 'Officer', icon: '🎯', description: 'General officer position' },
-  { id: 'advisor', name: 'Teacher / Advisor', icon: '👨‍🏫', description: 'Faculty advisor' },
+  { id: 'student', name: 'Student / Member', icon: '', description: 'Regular club member' },
+  { id: 'president', name: 'President', icon: '', description: 'Club president or leader' },
+  { id: 'vicepresident', name: 'Vice President', icon: '', description: 'Second in command' },
+  { id: 'treasurer', name: 'Treasurer', icon: '', description: 'Manages club finances' },
+  { id: 'secretary', name: 'Secretary', icon: '', description: 'Records meetings and activities' },
+  { id: 'officer', name: 'Officer', icon: '', description: 'General officer position' },
+  { id: 'advisor', name: 'Teacher / Advisor', icon: '', description: 'Faculty advisor' },
 ];
 
 // Notification types

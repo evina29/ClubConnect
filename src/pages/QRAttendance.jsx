@@ -126,17 +126,17 @@ const QRAttendance = () => {
   };
 
   return (
-    <div className="qr-page">
-      <header className="qr-page__header">
-        <h1 className="qr-page__title">QR check-in</h1>
-        <p className="qr-page__subtitle">
-          Scan a code to check in, or create one for your event.
-        </p>
-      </header>
+ <div className="qr-page">
+ <header className="qr-page__header">
+ <h1 className="qr-page__title">QR check-in</h1>
+ <p className="qr-page__subtitle">
+         Scan a code to check in, or create one for your event.
+ </p>
+ </header>
 
-      <div className="qr-page__card">
-        <div className="qr-segment" role="tablist" aria-label="Mode">
-          <button
+ <div className="qr-page__card">
+ <div className="qr-segment" role="tablist" aria-label="Mode">
+ <button
             type="button"
             role="tab"
             aria-selected={mode === 'scan'}
@@ -146,139 +146,139 @@ const QRAttendance = () => {
               setScanResult(null);
             }}
           >
-            Scan
-          </button>
-          <button
+           Scan
+ </button>
+ <button
             type="button"
             role="tab"
             aria-selected={mode === 'generate'}
             className={`qr-segment__btn${mode === 'generate' ? ' qr-segment__btn--active' : ''}`}
             onClick={() => setMode('generate')}
           >
-            Host
-          </button>
-        </div>
+           Host
+ </button>
+ </div>
 
-        {mode === 'scan' && (
-          <div className="qr-panel">
-            <div className="qr-scan-box">
-              {!scanning && !scanResult && (
-                <div className="qr-scan-placeholder">
-                  <span className="qr-scan-placeholder__icon" aria-hidden="true">
-                    📷
-                  </span>
-                  <p className="qr-scan-placeholder__text">
-                    Point your camera at the event QR code.
-                  </p>
-                  <button type="button" className="qr-btn qr-btn--primary" onClick={handleScanQR}>
-                    Open camera
-                  </button>
-                </div>
-              )}
+       {mode === 'scan' && (
+ <div className="qr-panel">
+ <div className="qr-scan-box">
+             {!scanning && !scanResult && (
+ <div className="qr-scan-placeholder">
+ <span className="qr-scan-placeholder__icon" aria-hidden="true">
+ 
+                 </span>
+ <p className="qr-scan-placeholder__text">
+                   Point your camera at the event QR code.
+ </p>
+ <button type="button" className="qr-btn qr-btn--primary" onClick={handleScanQR}>
+                   Open camera
+ </button>
+ </div>
+             )}
 
               {scanning && (
-                <div className="qr-camera">
-                  <video ref={videoRef} className="qr-camera__video" playsInline muted />
-                  <canvas ref={canvasRef} className="qr-camera__canvas" aria-hidden="true" />
-                  <div className="qr-camera__overlay">
-                    <div className="qr-camera__frame" />
-                  </div>
-                  <button type="button" className="qr-btn qr-btn--ghost qr-camera__stop" onClick={stopScanning}>
-                    Cancel
-                  </button>
-                </div>
-              )}
+ <div className="qr-camera">
+ <video ref={videoRef} className="qr-camera__video" playsInline muted />
+ <canvas ref={canvasRef} className="qr-camera__canvas" aria-hidden="true" />
+ <div className="qr-camera__overlay">
+ <div className="qr-camera__frame" />
+ </div>
+ <button type="button" className="qr-btn qr-btn--ghost qr-camera__stop" onClick={stopScanning}>
+                   Cancel
+ </button>
+ </div>
+             )}
 
               {scanResult && (
-                <div className={`qr-result ${scanResult.success ? 'qr-result--ok' : 'qr-result--bad'}`}>
-                  <span className="qr-result__icon" aria-hidden="true">
-                    {scanResult.success ? '✓' : '✕'}
-                  </span>
-                  <p className="qr-result__msg">{scanResult.message}</p>
-                  {scanResult.success && (
-                    <span className="qr-result__pts">+{scanResult.points} pts</span>
-                  )}
-                  <button
+ <div className={`qr-result ${scanResult.success ? 'qr-result--ok' : 'qr-result--bad'}`}>
+ <span className="qr-result__icon" aria-hidden="true">
+                   {scanResult.success ? '' : ''}
+ </span>
+ <p className="qr-result__msg">{scanResult.message}</p>
+                 {scanResult.success && (
+ <span className="qr-result__pts">+{scanResult.points} pts</span>
+                 )}
+ <button
                     type="button"
                     className="qr-btn qr-btn--secondary"
                     onClick={() => setScanResult(null)}
                   >
-                    Scan again
-                  </button>
-                </div>
-              )}
-            </div>
+                   Scan again
+ </button>
+ </div>
+             )}
+ </div>
 
-            <details className="qr-details">
-              <summary className="qr-details__summary">How scanning works</summary>
-              <ul className="qr-details__list">
-                <li>Get the QR from your organizer or screen.</li>
-                <li>Allow camera when prompted.</li>
-                <li>Hold steady until check-in confirms.</li>
-              </ul>
-            </details>
-          </div>
-        )}
+ <details className="qr-details">
+ <summary className="qr-details__summary">How scanning works</summary>
+ <ul className="qr-details__list">
+ <li>Get the QR from your organizer or screen.</li>
+ <li>Allow camera when prompted.</li>
+ <li>Hold steady until check-in confirms.</li>
+ </ul>
+ </details>
+ </div>
+       )}
 
         {mode === 'generate' && (
-          <div className="qr-panel">
-            <label className="qr-label" htmlFor="qr-event-select">
-              Event
-            </label>
-            <select
+ <div className="qr-panel">
+ <label className="qr-label" htmlFor="qr-event-select">
+             Event
+ </label>
+ <select
               id="qr-event-select"
               className="qr-select"
               value={selectedEvent}
               onChange={(e) => setSelectedEvent(e.target.value)}
             >
-              <option value="">Choose an event…</option>
-              {events.map((event) => (
-                <option key={event.id} value={event.id}>
-                  {event.name} · {event.date}
-                </option>
-              ))}
-            </select>
+ <option value="">Choose an event…</option>
+             {events.map((event) => (
+ <option key={event.id} value={event.id}>
+                 {event.name} · {event.date}
+ </option>
+             ))}
+ </select>
 
-            <button
+ <button
               type="button"
               className="qr-btn qr-btn--primary qr-btn--block"
               onClick={handleGenerateQR}
               disabled={!selectedEvent}
             >
-              Create check-in code
-            </button>
+             Create check-in code
+ </button>
 
-            {qrCode && (
-              <div className="qr-output">
-                <div className="qr-output__frame">
-                  <img src={qrCode} alt="Check-in QR code for selected event" />
-                </div>
-                <p className="qr-output__status">Code ready — show this to attendees.</p>
-                <p className="qr-output__hint">Expires in 15 minutes for security.</p>
-                <div className="qr-output__actions">
-                  <button type="button" className="qr-btn qr-btn--ghost qr-btn--half">
-                    Download
-                  </button>
-                  <button type="button" className="qr-btn qr-btn--ghost qr-btn--half">
-                    Share
-                  </button>
-                </div>
-              </div>
-            )}
+           {qrCode && (
+ <div className="qr-output">
+ <div className="qr-output__frame">
+ <img src={qrCode} alt="Check-in QR code for selected event" />
+ </div>
+ <p className="qr-output__status">Code ready — show this to attendees.</p>
+ <p className="qr-output__hint">Expires in 15 minutes for security.</p>
+ <div className="qr-output__actions">
+ <button type="button" className="qr-btn qr-btn--ghost qr-btn--half">
+                   Download
+ </button>
+ <button type="button" className="qr-btn qr-btn--ghost qr-btn--half">
+                   Share
+ </button>
+ </div>
+ </div>
+           )}
 
-            <details className="qr-details">
-              <summary className="qr-details__summary">Tips for hosts</summary>
-              <ul className="qr-details__list">
-                <li>Create the code before people arrive.</li>
-                <li>Display full-screen or print large.</li>
-                <li>Regenerate if the window expires.</li>
-              </ul>
-            </details>
-          </div>
-        )}
-      </div>
-    </div>
-  );
+ <details className="qr-details">
+ <summary className="qr-details__summary">Tips for hosts</summary>
+ <ul className="qr-details__list">
+ <li>Create the code before people arrive.</li>
+ <li>Display full-screen or print large.</li>
+ <li>Regenerate if the window expires.</li>
+ </ul>
+ </details>
+ </div>
+       )}
+ </div>
+ </div>
+ );
 };
 
 export default QRAttendance;

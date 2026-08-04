@@ -37,28 +37,28 @@ export default function NavigationChatbot() {
   };
 
   return (
-    <div className={"nav-chatbot " + (open ? 'open' : '')}>
-      <button className="chat-toggle" onClick={() => setOpen(o => !o)} aria-label="Navigation assistant">
-        🤖
-      </button>
+ <div className={"nav-chatbot " + (open ? 'open' : '')}>
+ <button className="chat-toggle" onClick={() => setOpen(o => !o)} aria-label="Navigation assistant">
+ 
+     </button>
 
-      {open && (
-        <div className="chat-panel">
-          <div className="chat-header">Navigation Assistant</div>
-          <div className="chat-body">
-            {messages.length === 0 && (
-              <div className="chat-welcome">Ask me to navigate: e.g., "Go to calendar"</div>
-            )}
+     {open && (
+ <div className="chat-panel">
+ <div className="chat-header">Navigation Assistant</div>
+ <div className="chat-body">
+           {messages.length === 0 && (
+ <div className="chat-welcome">Ask me to navigate: e.g., "Go to calendar"</div>
+           )}
             {messages.map((m, i) => (
-              <div key={i} className={"chat-msg " + (m.from === 'bot' ? 'bot' : 'user')}>{m.text}</div>
-            ))}
-          </div>
-          <div className="chat-input">
-            <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="How can I help?" />
-            <button onClick={send}>Send</button>
-          </div>
-        </div>
-      )}
-    </div>
-  );
+ <div key={i} className={"chat-msg " + (m.from === 'bot' ? 'bot' : 'user')}>{m.text}</div>
+           ))}
+ </div>
+ <div className="chat-input">
+ <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="How can I help?" />
+ <button onClick={send}>Send</button>
+ </div>
+ </div>
+     )}
+ </div>
+ );
 }
