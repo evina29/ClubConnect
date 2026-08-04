@@ -781,16 +781,14 @@ const Register = () => {
             style={{
               flex: 1,
               padding: '14px',
-              backgroundColor: 'var(--soft-blue)',
-              border: '2px solid #1a73e8',
-              borderRadius: '8px',
-              color: '#1a1a1a',
+              backgroundColor: '#2e7d32',
+              border: 'none',
+              borderRadius: '6px',
+              color: '#fff',
               fontSize: '16px',
               fontWeight: '600',
-              letterSpacing: '0.02em',
               cursor: loading ? 'not-allowed' : 'pointer',
-              opacity: loading ? 0.7 : 1,
-              boxShadow: '0 2px 8px rgba(110,181,255,0.10)'
+              opacity: loading ? 0.7 : 1
             }}
           >
             {loading ? 'Creating account...' : currentStep === totalSteps ? 'Complete Setup' : 'Next'}

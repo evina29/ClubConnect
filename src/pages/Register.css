@@ -2,7 +2,7 @@
 
 .register-container {
   min-height: 100vh;
-  background: #FFF8F0;
+  background: #ffffff;
   padding: 40px 20px;
   display: flex;
   align-items: center;
@@ -12,11 +12,11 @@
 .register-card {
   max-width: 600px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 16px;
+  background-color: #fff;
+  border-radius: 8px;
   padding: 40px;
-  border: 1px solid rgba(126, 217, 87, 0.1);
-  box-shadow: 0 8px 32px rgba(126, 217, 87, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid #ddd;
+  box-shadow: none;
 }
 
 /* Input Fields */
@@ -39,8 +39,8 @@ input[type="email"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus {
   outline: none;
-  border-color: var(--vibrant-green);
-  box-shadow: 0 0 0 3px rgba(126, 217, 87, 0.1);
+  border-color: #2e7d32;
+  box-shadow: none;
 }
 
 /* Buttons */
@@ -49,8 +49,7 @@ input[type="search"]:focus {
 }
 
 .register-card button:hover:not(:disabled) {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(110, 181, 255, 0.3);
+  opacity: 0.9;
 }
 
 /* Responsive styles */
