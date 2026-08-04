@@ -54,15 +54,14 @@ npm run preview
 
 ## Tools and technologies
 
-The app is built with React and Vite, with a handful of libraries doing the heavy lifting for the bigger features:
+The app is built with React and Vite, with a couple of libraries doing the heavy lifting for the bigger features:
 
 - **React 18 and React Router** for the interface and page navigation
 - **Vite** as the build tool and dev server
-- **Firebase** for authentication and the Firestore database
 - **Chart.js** with react-chartjs-2 for the analytics graphs
 - **qrcode** for generating the event check in codes
-- **date-fns** for handling dates on the calendar
-- **Spline** for the 3D graphics on the landing pages
+
+Accounts and data are kept in the browser for now using localStorage, so you can try the whole thing without setting up any backend.
 
 ## What inspired it
 
