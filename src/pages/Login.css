@@ -1,78 +1,40 @@
-/* Login.css - Dark Glassy App Theme */
+/* Login.css - simple and plain */
 
 .login-bg {
   min-height: 100vh;
-  width: 100vw;
-  background: linear-gradient(135deg, #1a2a2f 0%, #1e3c2e 100%);
+  width: 100%;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.login-bg::before {
-  content: '';
-  position: absolute;
-  top: -120px;
-  left: -120px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(126,217,87,0.12) 60%, transparent 100%);
-  z-index: 1;
-  animation: float 12s ease-in-out infinite;
-}
-
-.login-bg::after {
-  content: '';
-  position: absolute;
-  bottom: -100px;
-  right: -100px;
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(110,181,255,0.10) 60%, transparent 100%);
-  z-index: 1;
-  animation: float 14s ease-in-out infinite reverse;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-30px); }
+  padding: 24px;
+  box-sizing: border-box;
 }
 
 .login-glass {
-  background: rgba(24, 36, 32, 0.85);
-  box-shadow: 0 8px 40px rgba(110,181,255,0.10);
-  border-radius: 32px;
-  padding: 48px 32px 32px 32px;
-  max-width: 400px;
-  width: 95vw;
-  margin: 0 auto;
-  z-index: 2;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 32px;
+  max-width: 380px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  position: relative;
-  backdrop-filter: blur(8px);
 }
 
 .login-title {
-  font-size: 2.2rem;
-  font-weight: 800;
-  background: linear-gradient(90deg, #7ED957, #6EB5FF);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 0.5rem;
-  letter-spacing: -1px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 6px;
   text-align: center;
 }
 
 .login-desc {
-  color: #b6e6c9;
-  font-size: 1.1rem;
+  color: #666;
+  font-size: 0.95rem;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 24px;
 }
 
 .login-form {
@@ -81,78 +43,63 @@
 
 .login-input {
   display: block;
-  margin: 0 auto 18px;
-  padding: 14px 18px;
+  margin: 0 0 14px;
+  padding: 12px 14px;
   width: 100%;
-  border: none;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  background: rgba(255,255,255,0.08);
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(110,181,255,0.04);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fff;
+  color: #222;
   outline: none;
-  transition: border 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
 }
 
 .login-input:focus {
-  border: 2px solid #7ED957;
-  box-shadow: 0 0 0 2px #7ED95733;
+  border-color: #2e7d32;
 }
 
 .login-btn {
-  padding: 16px;
+  padding: 12px;
   width: 100%;
-  background: linear-gradient(90deg, #7ED957, #6EB5FF);
+  background: #2e7d32;
   color: #fff;
   border: none;
-  border-radius: 12px;
-  font-size: 1.15rem;
-  font-weight: 700;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  margin-bottom: 18px;
-  box-shadow: 0 4px 16px rgba(110,181,255,0.10);
-  transition: filter 0.2s, transform 0.2s;
+  margin-bottom: 16px;
 }
 
 .login-btn:disabled {
-  background: #444;
-  color: #aaa;
+  background: #9e9e9e;
   cursor: not-allowed;
 }
 
 .login-btn:hover:not(:disabled) {
-  filter: brightness(1.1);
-  transform: translateY(-2px) scale(1.03);
+  background: #276b2b;
 }
 
 .login-link {
-  color: #7ED957;
+  color: #2e7d32;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s;
 }
 
 .login-link:hover {
-  color: #6EB5FF;
+  text-decoration: underline;
 }
 
 .login-error {
-  color: #ff6b6b;
-  font-size: 1rem;
-  margin-bottom: 16px;
+  color: #c62828;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
   text-align: center;
 }
 
 @media (max-width: 600px) {
   .login-glass {
-    padding: 24px 8px 18px 8px;
-    max-width: 99vw;
-  }
-  .login-title {
-    font-size: 1.4rem;
-  }
-  .login-btn {
-    font-size: 1rem;
-    padding: 12px;
+    padding: 24px 18px;
   }
 }

@@ -82,7 +82,7 @@ const Login = () => {
             {loading ? 'Signing in...' : 'Sign In'}
           </button>
         </form>
-        <div style={{ textAlign: 'center', color: '#b6e6c9', fontSize: '1rem' }}>
+        <div style={{ textAlign: 'center', color: '#666', fontSize: '0.95rem' }}>
           Don't have an account?{' '}
           <Link to="/app/register" className="login-link">Sign up</Link>
         </div>
@@ -103,20 +103,20 @@ const Login = () => {
           zIndex: 1000
         }} onClick={() => setShowResetModal(false)}>
           <div style={{
-            background: '#222',
-            borderRadius: '16px',
+            background: '#fff',
+            borderRadius: '8px',
             padding: '32px',
             maxWidth: '400px',
             width: '90%',
             boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
-            color: '#fff'
+            color: '#222'
           }} onClick={(e) => e.stopPropagation()}>
-            <h2 style={{ color: '#7ED957', marginBottom: '8px' }}>Reset Password</h2>
-            <p style={{ color: '#b6e6c9', fontSize: '14px', marginBottom: '24px' }}>
+            <h2 style={{ color: '#222', marginBottom: '8px' }}>Reset Password</h2>
+            <p style={{ color: '#666', fontSize: '14px', marginBottom: '24px' }}>
               Enter your email and we'll send you instructions to reset your password
             </p>
             {resetMessage ? (
-              <p style={{ color: '#7ED957', fontSize: '14px', textAlign: 'center', padding: '20px' }}>
+              <p style={{ color: '#2e7d32', fontSize: '14px', textAlign: 'center', padding: '20px' }}>
                 ✓ {resetMessage}
               </p>
             ) : (
@@ -128,7 +128,6 @@ const Login = () => {
                   onChange={(e) => setResetEmail(e.target.value)}
                   required
                   className="login-input"
-                  style={{ background: 'rgba(255,255,255,0.10)', color: '#fff', border: 'none' }}
                 />
                 <div style={{ display: 'flex', gap: '12px' }}>
                   <button
@@ -137,11 +136,11 @@ const Login = () => {
                     style={{
                       flex: 1,
                       padding: '12px',
-                      background: 'transparent',
-                      border: '1px solid #444',
-                      borderRadius: '8px',
+                      background: '#fff',
+                      border: '1px solid #ccc',
+                      borderRadius: '6px',
                       cursor: 'pointer',
-                      color: '#b6e6c9',
+                      color: '#333',
                       fontSize: '14px'
                     }}
                   >
@@ -152,10 +151,10 @@ const Login = () => {
                     style={{
                       flex: 1,
                       padding: '12px',
-                      background: 'linear-gradient(135deg, #7ED957, #6EB5FF)',
+                      background: '#2e7d32',
                       color: 'white',
                       border: 'none',
-                      borderRadius: '8px',
+                      borderRadius: '6px',
                       cursor: 'pointer',
                       fontSize: '14px',
                       fontWeight: '600'
