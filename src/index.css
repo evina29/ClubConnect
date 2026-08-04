@@ -73,8 +73,7 @@ html, body {
   font-size: 16px;
   line-height: 1.6;
   color: var(--text-primary);
-  background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-light-beige) 100%);
-  background-attachment: fixed;
+  background: #f6f6f4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -92,12 +91,14 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 h2 {
   font-size: 28px;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 h3 {
